@@ -103,6 +103,68 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="243693232545427">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="939360858106342" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="326011088702082">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="444099570067077" type="player1box">
+                                    <param id="0" name="Object">portalEntry</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="815438079326349" type="player1box">
+                                    <param id="0" name="Object">portalExit</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="290211286841098">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="670760828399002" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="559399729887329" type="player1box">
+                                    <param id="0" name="Object">portalExit</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="108783697711371" type="player1box">
+                                    <param id="0" name="X">336</param>
+                                    <param id="1" name="Y">321</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="639361492412175">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="167833216797658" type="player1box">
+                            <param id="0" name="Object">portalEntry</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="769710998253860" type="player1box">
+                            <param id="0" name="Object">portalExit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="378062671828754" type="useUI">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="363666866195805">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="124017811993741" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="908101864257884" type="useUI">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
     </events>

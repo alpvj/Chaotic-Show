@@ -143,6 +143,30 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="useUI" sid="261474148577474">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="824849680986991" speed="5">
+                    <frame duration="1" hotspotX="0.504673" hotspotY="0.504673" original-source="C:\Users\Andre\Downloads\Player - Among Us\buttons.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="portalExit" sid="700323085074754">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="970034656075072" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="portalEntry" sid="365702295879835">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="495535791826794" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-group description="" sid="455030802016515" title="Player">
+            <sub-events>
+                <event-block sid="329483357098990">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="667703378282274" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="701697263746176" type="player1animation">
+                            <param id="0" name="Object">player1box</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="449314494841196" type="player1animation">
+                            <param id="0" name="Pin to">player1box</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="182162058676324" type="player1animation">
+                            <param id="0" name="Animation">&quot;spawn&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="267698212756663">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="971532933050794" type="player1box" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="605720197280803" type="player1animation">
+                            <param id="0" name="Animation">&quot;walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="638260133527678">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="559613111321985" type="player1box" />
+                        <condition id="2" inverted="1" name="Is playing" sid="271324215279056" type="player1animation">
+                            <param id="0" name="Animation">&quot;spawn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="504468906885220" type="player1animation">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="738053572047589">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="130487205736081" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="442564539153336" type="player1box">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="150553544397831">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="431555230613198" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="144692995120107" type="player1box">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="737996459437996" type="player1animation">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="133786211675697">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="831486387577266" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="771001595721119" type="player1box">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="895835940872472">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="727062782007331" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="630046806248569" type="player1box">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="328267860471145" type="player1animation">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

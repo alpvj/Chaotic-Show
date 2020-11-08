@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Chaotic Show</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>27900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="player1box" sid="386623762606861">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="635487925251693">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="752136996997235" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="player1animation" sid="159688219469304">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="352974925459351">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="239185177674409" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\idle.png">
+                        <collision-poly>
+                            <point x="0.24359" y="0.184466" />
+                            <point x="0.5" y="0.0194175" />
+                            <point x="0.846154" y="0.116505" />
+                            <point x="0.935897" y="0.495146" />
+                            <point x="0.923077" y="0.941748" />
+                            <point x="0.5" y="0.980583" />
+                            <point x="0.115385" y="0.912621" />
+                            <point x="0.025641" y="0.495146" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="12" loop="1" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="850625925867461" speed="13">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0001.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0002.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0003.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0004.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0005.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0006.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0007.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0008.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0009.png" />
+                    <frame duration="1" hotspotX="0.506494" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0010.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0011.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0012.png" />
+                </animation>
+                <animation framecount="14" loop="0" name="spawn" pingpong="0" repeatcount="1" repeatto="0" sid="487252430495675" speed="13">
+                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0001.png" />
+                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0003.png" />
+                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0006.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0022.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0033.png" />
+                    <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0037.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0039.png" />
+                    <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0041.png" />
+                    <frame duration="1" hotspotX="0.504762" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0043.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0046.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0048.png" />
+                    <frame duration="1" hotspotX="0.505376" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0049.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0051.png" />
+                    <frame duration="1" hotspotX="0.505882" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0052.png" />
+                </animation>
+                <animation framecount="7" loop="0" name="vent" pingpong="0" repeatcount="1" repeatto="0" sid="882321464849334" speed="13">
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0001.png" />
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0002.png" />
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0003.png" />
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0004.png" />
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0005.png" />
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0006.png" />
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0007.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="158295475522340">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="stage" sid="731851000186239">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="949940083225792" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Downloads\Igloo_Buildings_Sprites_84.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="collision" sid="290824285529981">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="570092026507704">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="916111317358622" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="2" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

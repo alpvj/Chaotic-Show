@@ -248,7 +248,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="347686972296033" speed="5">
-                    <frame duration="1" hotspotX="0.269231" hotspotY="0.73224" original-source="C:\Users\Andre\Downloads\Screenshot 2020-11-08 223851.png">
+                    <frame duration="1" hotspotX="0.269231" hotspotY="0.732044" original-source="C:\Users\mbs8\Downloads\guitarra.png">
                         <collision-poly>
                             <point x="0.367002" y="0.355129" />
                             <point x="0.537578" y="0.297408" />

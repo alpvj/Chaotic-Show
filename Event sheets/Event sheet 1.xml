@@ -49,59 +49,71 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="738053572047589">
+                <event-block sid="671078916702138">
                     <conditions>
-                        <condition id="2" name="Key is down" sid="130487205736081" type="Keyboard">
-                            <param id="0" name="Key">87</param>
+                        <condition id="-7" name="Compare instance variable" sid="131268199838159" type="player1box">
+                            <param id="0" name="Instance variable">playing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;none&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="442564539153336" type="player1box">
-                            <param id="0" name="Control">2</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="150553544397831">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="431555230613198" type="Keyboard">
-                            <param id="0" name="Key">65</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="144692995120107" type="player1box">
-                            <param id="0" name="Control">0</param>
-                        </action>
-                        <action id="7" name="Set mirrored" sid="737996459437996" type="player1animation">
-                            <param id="0" name="State">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="133786211675697">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="831486387577266" type="Keyboard">
-                            <param id="0" name="Key">83</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="771001595721119" type="player1box">
-                            <param id="0" name="Control">3</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="895835940872472">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="727062782007331" type="Keyboard">
-                            <param id="0" name="Key">68</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="630046806248569" type="player1box">
-                            <param id="0" name="Control">1</param>
-                        </action>
-                        <action id="7" name="Set mirrored" sid="328267860471145" type="player1animation">
-                            <param id="0" name="State">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="738053572047589">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="130487205736081" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="442564539153336" type="player1box">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="150553544397831">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="431555230613198" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="144692995120107" type="player1box">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="737996459437996" type="player1animation">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="133786211675697">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="831486387577266" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="771001595721119" type="player1box">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="895835940872472">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="727062782007331" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="630046806248569" type="player1box">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="328267860471145" type="player1animation">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="243693232545427">
                     <conditions>
@@ -138,6 +150,153 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="481260803752052">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="907237604994422" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="198166122435447" type="player1box">
+                                    <param id="0" name="Object">guitarbox</param>
+                                </condition>
+                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="988927629900427" type="player1box" />
+                                <condition id="-7" name="Compare instance variable" sid="341141706521029" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;none&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="138250062922473" type="guitarra">
+                                    <param id="0" name="Object">player1animation</param>
+                                    <param id="1" name="Image point (optional)">&quot;guitar&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="726000270449017" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;guitar&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="484327371030993">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="488904875860850" type="player1animation" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="983649128829535" type="guitarra">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action disabled="1" id="-18" name="Rotate clockwise" sid="194926223802682" type="guitarra">
+                                            <param id="0" name="Degrees">180</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="340211194308692" type="guitarra">
+                                            <param id="0" name="Angle">360-24</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="308727884176339">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="591869995769006" type="player1animation" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="149059615192946" type="guitarra">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="129257771415723" type="guitarra">
+                                            <param id="0" name="Angle">24</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="693516148600554">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="718288061870013" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="867162703570426" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="722454421044895" type="player1box">
+                                    <param id="0" name="Object">guitarbox</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="812514023832666" type="guitarra">
+                                    <param id="0" name="X">-100</param>
+                                    <param id="1" name="Y">-100</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="949907265395658" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="200899300337069">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="343990656832931" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="752551837807561" type="player1box">
+                                    <param id="0" name="Object">microphonebox</param>
+                                </condition>
+                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="826680182154913" type="player1box" />
+                                <condition id="-7" name="Compare instance variable" sid="581333026849214" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;none&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="157445367920942" type="microfone">
+                                    <param id="0" name="Object">player1animation</param>
+                                    <param id="1" name="Image point (optional)">&quot;microphone&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="209602890817849" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;microphone&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="128088627324470">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="854981921398833" type="player1animation" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="858242139491300" type="microfone">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="312554496085673">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="979388007177557" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="255719200483181" type="microfone">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="377708461515827">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="299083761542324" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="604183497110724" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="368363795031454" type="player1box">
+                                    <param id="0" name="Object">microphonebox</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="979037605194279" type="microfone">
+                                    <param id="0" name="X">-100</param>
+                                    <param id="1" name="Y">-100</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="356054782827519" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block any="1" sid="639361492412175">
@@ -147,6 +306,12 @@
                         </condition>
                         <condition id="1" name="Is overlapping another object" sid="769710998253860" type="player1box">
                             <param id="0" name="Object">portalExit</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="912110963595367" type="player1box">
+                            <param id="0" name="Object">guitarbox</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="537836233648068" type="player1box">
+                            <param id="0" name="Object">microphonebox</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -167,5 +332,6 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="202834130555318" title="Instruments" />
     </events>
 </c2eventsheet>

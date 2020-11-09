@@ -18,7 +18,10 @@
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
+        <effect author="Scirra" id="softlight">Soft Light</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -45,6 +48,9 @@
     <object-folder>
         <object-type name="player1box" sid="386623762606861">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="playing" sid="895650239799839" type="string" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="635487925251693">
                     <behavior id="EightDir" />
@@ -66,6 +72,8 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="239185177674409" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\idle.png">
+                        <image-point name="microphone" x="0.307692" y="0.883495" />
+                        <image-point name="guitar" x="0.5" y="0.621359" />
                         <collision-poly>
                             <point x="0.24359" y="0.184466" />
                             <point x="0.5" y="0.0194175" />
@@ -79,43 +87,109 @@
                     </frame>
                 </animation>
                 <animation framecount="12" loop="1" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="850625925867461" speed="13">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0001.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0002.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0003.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0004.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0005.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0006.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0007.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0008.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0009.png" />
-                    <frame duration="1" hotspotX="0.506494" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0010.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0011.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0012.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0001.png">
+                        <image-point name="micro" x="0.309524" y="0.884956" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0002.png">
+                        <image-point name="micro" x="0.309524" y="0.886957" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0003.png">
+                        <image-point name="micro" x="0.309524" y="0.883929" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0004.png">
+                        <image-point name="micro" x="0.309524" y="0.88785" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0005.png">
+                        <image-point name="micro" x="0.302632" y="0.886598" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0006.png">
+                        <image-point name="micro" x="0.302632" y="0.886598" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0007.png">
+                        <image-point name="micro" x="0.307692" y="0.881356" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0008.png">
+                        <image-point name="micro" x="0.307692" y="0.883333" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0009.png">
+                        <image-point name="micro" x="0.307692" y="0.880342" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.506494" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0010.png">
+                        <image-point name="micro" x="0.311688" y="0.88785" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0011.png">
+                        <image-point name="micro" x="0.302632" y="0.884211" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Walk\walkcolor0012.png">
+                        <image-point name="micro" x="0.302632" y="0.884211" />
+                    </frame>
                 </animation>
                 <animation framecount="14" loop="0" name="spawn" pingpong="0" repeatcount="1" repeatto="0" sid="487252430495675" speed="13">
-                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0001.png" />
-                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0003.png" />
-                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0006.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0022.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0033.png" />
-                    <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0037.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0039.png" />
-                    <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0041.png" />
-                    <frame duration="1" hotspotX="0.504762" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0043.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0046.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0048.png" />
-                    <frame duration="1" hotspotX="0.505376" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0049.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0051.png" />
-                    <frame duration="1" hotspotX="0.505882" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0052.png" />
+                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0001.png">
+                        <image-point name="micro" x="0.306306" y="0.882353" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0003.png">
+                        <image-point name="micro" x="0.306306" y="0.882353" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0006.png">
+                        <image-point name="micro" x="0.306306" y="0.882353" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0022.png">
+                        <image-point name="micro" x="0.306818" y="0.884211" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0033.png">
+                        <image-point name="micro" x="0.3125" y="0.880734" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0037.png">
+                        <image-point name="micro" x="0.31068" y="0.880734" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0039.png">
+                        <image-point name="micro" x="0.308511" y="0.88172" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0041.png">
+                        <image-point name="micro" x="0.31068" y="0.888889" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.504762" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0043.png">
+                        <image-point name="micro" x="0.304762" y="0.885057" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0046.png">
+                        <image-point name="micro" x="0.306122" y="0.88" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0048.png">
+                        <image-point name="micro" x="0.305556" y="0.881188" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.505376" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0049.png">
+                        <image-point name="micro" x="0.311828" y="0.883721" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0051.png">
+                        <image-point name="micro" x="0.302326" y="0.884956" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.505882" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Spawn\spawn0052.png">
+                        <image-point name="micro" x="0.305882" y="0.885965" />
+                    </frame>
                 </animation>
                 <animation framecount="7" loop="0" name="vent" pingpong="0" repeatcount="1" repeatto="0" sid="882321464849334" speed="13">
-                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0001.png" />
-                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0002.png" />
-                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0003.png" />
-                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0004.png" />
-                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0005.png" />
-                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0006.png" />
-                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0007.png" />
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0001.png">
+                        <image-point name="micro" x="0.308642" y="0.880435" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0002.png">
+                        <image-point name="micro" x="0.308642" y="0.88172" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0003.png">
+                        <image-point name="micro" x="0.308642" y="0.88" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0004.png">
+                        <image-point name="micro" x="0.308642" y="0.88" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0005.png">
+                        <image-point name="micro" x="0.308642" y="0.880435" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0006.png">
+                        <image-point name="micro" x="0.308642" y="0.88172" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\Get In Vent\getinVent0007.png">
+                        <image-point name="micro" x="0.308642" y="0.882353" />
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -164,6 +238,105 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="495535791826794" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="guitarra" sid="907812467047577">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="347686972296033" speed="5">
+                    <frame duration="1" hotspotX="0.457031" hotspotY="0.552734" original-source="C:\Users\Andre\Downloads\guitarra.png">
+                        <collision-poly>
+                            <point x="0.363281" y="0.363281" />
+                            <point x="0.5" y="0.308594" />
+                            <point x="0.962891" y="0.0371094" />
+                            <point x="0.691406" y="0.5" />
+                            <point x="0.636719" y="0.636719" />
+                            <point x="0.5" y="0.900391" />
+                            <point x="0.0878906" y="0.912109" />
+                            <point x="0.0976563" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="microfone" sid="413380261973205">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="533420530379029" speed="5">
+                    <frame duration="1" hotspotX="0.0328467" hotspotY="0.976589" original-source="C:\Users\Andre\Downloads\micro.png">
+                        <collision-poly>
+                            <point x="0.390511" y="0.423109" />
+                            <point x="1" y="0.313171" />
+                            <point x="0.211482" y="0.859532" />
+                            <point x="0.955571" y="1" />
+                            <point x="0.390511" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.859532" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="guitarbox" sid="706529390632846">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="996231935934322" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="microphonebox" sid="804764495588263">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="965197765739963" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lightR" sid="445798745600226">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="SoftLight">
+                    <effect id="softlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="651656811127277" speed="5">
+                    <frame duration="1" hotspotX="0.535587" hotspotY="0.407609" original-source="C:\Users\Andre\Downloads\luztalvez2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lightL" sid="698231710952363">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="SoftLight">
+                    <effect id="softlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="358901774235754" speed="5">
+                    <frame duration="1" hotspotX="0.464413" hotspotY="0.407609" original-source="C:\Users\Andre\Downloads\luztalvez2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="xMark" sid="231562121854959">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="GlowVertical">
+                    <effect id="glowvertical" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="604796853618016" speed="5">
+                    <frame duration="1" hotspotX="0.486486" hotspotY="0.461538" />
                 </animation>
             </animation-folder>
         </object-type>

@@ -10,12 +10,15 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>27900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
@@ -72,8 +75,8 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="239185177674409" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\idle.png">
-                        <image-point name="microphone" x="0.307692" y="0.883495" />
-                        <image-point name="guitar" x="0.5" y="0.621359" />
+                        <image-point name="microphone" x="1.23077" y="1.19417" />
+                        <image-point name="guitar" x="0.384615" y="0.708738" />
                         <collision-poly>
                             <point x="0.24359" y="0.184466" />
                             <point x="0.5" y="0.0194175" />
@@ -245,16 +248,16 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="347686972296033" speed="5">
-                    <frame duration="1" hotspotX="0.457031" hotspotY="0.552734" original-source="C:\Users\Andre\Downloads\guitarra.png">
+                    <frame duration="1" hotspotX="0.269231" hotspotY="0.73224" original-source="C:\Users\Andre\Downloads\Screenshot 2020-11-08 223851.png">
                         <collision-poly>
-                            <point x="0.363281" y="0.363281" />
-                            <point x="0.5" y="0.308594" />
-                            <point x="0.962891" y="0.0371094" />
-                            <point x="0.691406" y="0.5" />
-                            <point x="0.636719" y="0.636719" />
-                            <point x="0.5" y="0.900391" />
-                            <point x="0.0878906" y="0.912109" />
-                            <point x="0.0976563" y="0.5" />
+                            <point x="0.367002" y="0.355129" />
+                            <point x="0.537578" y="0.297408" />
+                            <point x="1" y="0.0108647" />
+                            <point x="0.776385" y="0.499431" />
+                            <point x="0.708154" y="0.643733" />
+                            <point x="0.537578" y="0.92203" />
+                            <point x="0.0234133" y="0.934399" />
+                            <point x="0.0355973" y="0.499431" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -264,15 +267,15 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="533420530379029" speed="5">
-                    <frame duration="1" hotspotX="0.0328467" hotspotY="0.976589" original-source="C:\Users\Andre\Downloads\micro.png">
+                    <frame duration="1" hotspotX="0.476068" hotspotY="0.942043" original-source="C:\Users\Andre\Downloads\clipart1800058.png">
                         <collision-poly>
-                            <point x="0.390511" y="0.423109" />
-                            <point x="1" y="0.313171" />
-                            <point x="0.211482" y="0.859532" />
-                            <point x="0.955571" y="1" />
-                            <point x="0.390511" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0.859532" />
+                            <point x="1" y="0.859532" />
+                            <point x="1" y="1" />
+                            <point x="0.609489" y="1" />
+                            <point x="0.0444294" y="1" />
+                            <point x="0.788518" y="0.859532" />
+                            <point x="0" y="0.313171" />
+                            <point x="0.609489" y="0.423109" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -340,6 +343,59 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Function" sid="136148997120350">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="guitarButtonBox" sid="508468597218349">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="429725955355677" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.767123" y="0.306507" />
+                            <point x="0.780394" y="0.648117" />
+                            <point x="0.505993" y="0.815069" />
+                            <point x="0.204195" y="0.610445" />
+                            <point x="0.238014" y="0.306507" />
+                            <point x="0.520548" y="0.19863" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="microphoneButtonBox" sid="152291298027925">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="678757553760150" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.489726" y="0.191781" />
+                            <point x="0.768836" y="0.327055" />
+                            <point x="0.778253" y="0.663528" />
+                            <point x="0.510916" y="0.820848" />
+                            <point x="0.226455" y="0.65625" />
+                            <point x="0.246575" y="0.304795" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="noteBox" sid="988552380179387">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="278922877255034">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="261858916613851">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="985654954855052" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -350,6 +406,7 @@
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
+        <global-instance type="Function" uid="40" />
     </global-instances>
     <sounds-folder />
     <music-folder />

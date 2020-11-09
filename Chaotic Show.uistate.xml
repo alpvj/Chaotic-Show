@@ -42,5 +42,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/lightR/" />
         <folder expanded="1" path="animation-folder/lightL/" />
         <folder expanded="1" path="animation-folder/xMark/" />
+        <folder expanded="1" path="animation-folder/guitarButtonBox/" />
+        <folder expanded="1" path="animation-folder/microphoneButtonBox/" />
+        <folder expanded="1" path="animation-folder/noteBox/" />
     </folders-expanded>
 </c2uistate>

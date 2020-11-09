@@ -332,6 +332,126 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="202834130555318" title="Instruments" />
+        <event-group description="" sid="202834130555318" title="GuitarHero">
+            <sub-events>
+                <event-block sid="250977166502479">
+                    <conditions>
+                        <condition id="0" name="On function" sid="630008112437080" type="Function">
+                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="724815924104789">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="394263457953401" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="605999332443625" type="System">
+                                    <param id="0" name="Object to create">noteBox</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">755</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="889876366817216" type="noteBox">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="368455801469794">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="376550822149147" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="126357894989323" type="System">
+                                    <param id="0" name="Object to create">noteBox</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">525</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="639523910471565" type="noteBox">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="293746695986146">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="922117956470180" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="264220218506126" type="Function">
+                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="192819574812655" type="Function">
+                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="611358741915616">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="991468558327449" type="noteBox">
+                            <param id="0" name="Object">collision</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="591883592941244" type="noteBox" />
+                    </actions>
+                </event-block>
+                <event-block sid="104168451574204">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="346396762170682" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="215805141406879">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="476933921372417" type="noteBox">
+                                    <param id="0" name="Object">guitarButtonBox</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="558543504191706" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="959065906254345" type="noteBox" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="847394007630605">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="513999696674658" type="noteBox">
+                                    <param id="0" name="Object">microphoneButtonBox</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="425098135463557" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="494014660168927" type="noteBox" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

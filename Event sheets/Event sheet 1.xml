@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="seconds" sid="667540924311542" static="0" type="number">0</variable>
         <event-group description="" sid="455030802016515" title="Player">
             <sub-events>
                 <event-block sid="329483357098990">
@@ -21,6 +22,34 @@
                         <action id="4" name="Set animation" sid="182162058676324" type="player1animation">
                             <param id="0" name="Animation">&quot;spawn&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="778677563665727" type="Audio">
+                            <param id="0" name="Folder">1</param>
+                            <param id="1" name="Audio file name">&quot;Priscila Senna - Labirinto&quot;</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="1" name="Request project file" sid="373874691101360" type="AJAX">
+                            <param id="0" name="Tag">&quot;musicMatrix&quot;</param>
+                            <param id="1" name="File">json-music</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="328863820325726">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="459053030913563" type="AJAX">
+                            <param id="0" name="Tag">&quot;musicMatrix&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Load" sid="944382768157242" type="musicArray">
+                            <param id="0" name="JSON">AJAX.LastData</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="599818622519729" type="musicArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">27</param>
                         </action>
                     </actions>
                 </event-block>
@@ -391,15 +420,45 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="264220218506126" type="Function">
-                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
-                        </action>
-                        <action id="0" name="Call function" sid="192819574812655" type="Function">
-                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
+                        <action id="-10" name="Add to" sid="683078248313227" type="System">
+                            <param id="0" name="Variable">seconds</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="740083460387894">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="896973946716114" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="264220218506126" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="206396937450994">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="154206558756322" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="192819574812655" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="611358741915616">
                     <conditions>

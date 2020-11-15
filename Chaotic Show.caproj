@@ -10,6 +10,9 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>27900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -396,6 +399,15 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Audio" sid="378639091500581">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type global="1" name="musicArray" sid="765155114966825">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="AJAX" sid="150014058869607">
+            <plugin id="AJAX" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -407,9 +419,27 @@
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
         <global-instance type="Function" uid="40" />
+        <global-instance type="Audio" uid="45">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="AJAX" uid="48" />
     </global-instances>
     <sounds-folder />
-    <music-folder />
+    <music-folder>
+        <file name="Priscila Senna - Labirinto.m4a" />
+        <file name="Priscila Senna - Labirinto.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />
@@ -418,6 +448,9 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="Data">
+            <file name="json-music" />
         </file-folder>
     </files-folder>
 </c2project>

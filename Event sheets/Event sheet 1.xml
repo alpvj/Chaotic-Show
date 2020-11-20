@@ -406,7 +406,7 @@
                             </conditions>
                             <actions>
                                 <action id="-17" name="Move forward" sid="603220225303101" type="noteBox">
-                                    <param id="0" name="Distance">1.05</param>
+                                    <param id="0" name="Distance">0.9</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -615,15 +615,35 @@
                             <conditions>
                                 <condition id="1" name="Compare at XY" sid="154206558756322" type="musicArray">
                                     <param id="0" name="X">seconds</param>
-                                    <param id="1" name="Y">1</param>
+                                    <param id="1" name="Y">0</param>
                                     <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">1</param>
+                                    <param id="3" name="Value">2</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Call function" sid="192819574812655" type="Function">
                                     <param id="0" name="Name">&quot;spawnNote&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="990118291607408">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="586224194375873" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="104372039612623" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="305174163996439" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

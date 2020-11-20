@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="erros" sid="168738857236116" static="0" type="number">0</variable>
         <variable constant="0" name="seconds" sid="667540924311542" static="0" type="number">0</variable>
         <event-group description="" sid="455030802016515" title="Player">
             <sub-events>
@@ -33,6 +34,14 @@
                         <action id="1" name="Request project file" sid="373874691101360" type="AJAX">
                             <param id="0" name="Tag">&quot;musicMatrix&quot;</param>
                             <param id="1" name="File">json-music</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="963030332879051" type="System">
+                            <param id="0" name="Variable">erros</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="208145768840405" type="System">
+                            <param id="0" name="Variable">seconds</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -363,6 +372,128 @@
         </event-group>
         <event-group description="" sid="202834130555318" title="GuitarHero">
             <sub-events>
+                <event-block sid="698849227977694">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="156564228687049" type="System">
+                            <param id="0" name="Interval (seconds)">0.05</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-7" name="Set size" sid="190501133946637" type="buttonRed">
+                            <param id="0" name="Width">min(42,42/(sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 ) * 0.05))</param>
+                            <param id="1" name="Height">min(32/(sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 ) * 0.05),32)</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="266077842316781" type="buttonRed">
+                            <param id="0" name="Width">42- (42*( sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 )   /   sqrt((spawnRed.X-guitarButtonBox.X)^2 + (spawnRed.Y-guitarButtonBox.Y)^2 )  ))</param>
+                            <param id="1" name="Height">32 - (32*( sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 )   /   sqrt((spawnRed.X-guitarButtonBox.X)^2 + (spawnRed.Y-guitarButtonBox.Y)^2 )  ))</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="683915340341396" type="buttonYel">
+                            <param id="0" name="Width">50- (50*( sqrt((buttonYel.X-microphoneButtonBox.X)^2 + (buttonYel.Y-microphoneButtonBox.Y)^2 )   /   sqrt((spawnYel.X-microphoneButtonBox.X)^2 + (spawnYel.Y-microphoneButtonBox.Y)^2 )  ))</param>
+                            <param id="1" name="Height">40 - (40*( sqrt((buttonYel.X-microphoneButtonBox.X)^2 + (buttonYel.Y-microphoneButtonBox.Y)^2 )   /   sqrt((spawnYel.X-microphoneButtonBox.X)^2 + (spawnYel.Y-microphoneButtonBox.Y)^2 )  ))</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="492769018550116" type="errobar">
+                            <param id="0" name="Frame number">(erros &gt;= 8 )  + (erros &gt;= 15)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="933354511518889">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="113994816645006" type="noteBox">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-17" name="Move forward" sid="603220225303101" type="noteBox">
+                                    <param id="0" name="Distance">1.05</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="288840515541145">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="478199452756728" type="noteBox">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-17" name="Move forward" sid="882574003124060" type="noteBox">
+                                    <param id="0" name="Distance">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="368498105813852">
+                    <conditions>
+                        <condition behavior="Pin" id="0" inverted="1" name="Is pinned" sid="823016112240807" type="buttonRed" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="578291705057864" type="buttonRed" />
+                    </actions>
+                </event-block>
+                <event-block sid="441226991664351">
+                    <conditions>
+                        <condition behavior="Pin" id="0" inverted="1" name="Is pinned" sid="552616912301965" type="buttonYel" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="900661667266993" type="buttonYel" />
+                    </actions>
+                </event-block>
+                <event-block sid="527490779518763">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="829199747108998" type="guitarButtonBox">
+                            <param id="0" name="Object">noteBox</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="459971647239837" type="guitarButtonBox">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="342348903658199">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="928359690158751" type="guitarButtonBox">
+                            <param id="0" name="Object">noteBox</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="714905963728445" type="guitarButtonBox">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="104430022109503">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="359710435499419" type="microphoneButtonBox">
+                            <param id="0" name="Object">noteBox</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="315445978290965" type="microphoneButtonBox">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="271042019520174">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="101696248950107" type="microphoneButtonBox">
+                            <param id="0" name="Object">noteBox</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="700098294615887" type="microphoneButtonBox">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="250977166502479">
                     <conditions>
                         <condition id="0" name="On function" sid="630008112437080" type="Function">
@@ -383,11 +514,30 @@
                                 <action id="-3" name="Create object" sid="605999332443625" type="System">
                                     <param id="0" name="Object to create">noteBox</param>
                                     <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">755</param>
-                                    <param id="3" name="Y">0</param>
+                                    <param id="2" name="X">spawnYel.X</param>
+                                    <param id="3" name="Y">spawnYel.Y</param>
                                 </action>
-                                <action id="-8" name="Set angle" sid="889876366817216" type="noteBox">
-                                    <param id="0" name="Angle">90</param>
+                                <action id="-3" name="Create object" sid="709093467198254" type="System">
+                                    <param id="0" name="Object to create">buttonYel</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">spawnYel.X</param>
+                                    <param id="3" name="Y">spawnYel.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="770513198445235" type="buttonYel">
+                                    <param id="0" name="Width">1</param>
+                                    <param id="1" name="Height">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="853004361070872" type="buttonYel">
+                                    <param id="0" name="Pin to">noteBox</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="480133469699926" type="noteBox">
+                                    <param id="0" name="X">targetYel.X</param>
+                                    <param id="1" name="Y">targetYel.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="697928392276999" type="noteBox">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">&quot;microphone&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -403,11 +553,30 @@
                                 <action id="-3" name="Create object" sid="126357894989323" type="System">
                                     <param id="0" name="Object to create">noteBox</param>
                                     <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">525</param>
-                                    <param id="3" name="Y">0</param>
+                                    <param id="2" name="X">spawnRed.X</param>
+                                    <param id="3" name="Y">spawnRed.Y</param>
                                 </action>
-                                <action id="-8" name="Set angle" sid="639523910471565" type="noteBox">
-                                    <param id="0" name="Angle">90</param>
+                                <action id="-3" name="Create object" sid="367161131493304" type="System">
+                                    <param id="0" name="Object to create">buttonRed</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">spawnRed.X</param>
+                                    <param id="3" name="Y">spawnRed.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="654601668003034" type="buttonRed">
+                                    <param id="0" name="Width">1</param>
+                                    <param id="1" name="Height">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="105107960028179" type="buttonRed">
+                                    <param id="0" name="Pin to">noteBox</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="587852337912074" type="noteBox">
+                                    <param id="0" name="X">targetRed.X</param>
+                                    <param id="1" name="Y">targetRed.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="161254101060032" type="noteBox">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">&quot;guitar&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -468,6 +637,30 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="591883592941244" type="noteBox" />
+                        <action id="-10" name="Add to" sid="797563441122581" type="System">
+                            <param id="0" name="Variable">erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="187287681583673">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="112552477855374" type="buttonRed">
+                            <param id="0" name="Object">collision</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="485975943632930" type="buttonRed" />
+                    </actions>
+                </event-block>
+                <event-block sid="674502491998595">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="489204498223687" type="buttonYel">
+                            <param id="0" name="Object">collision</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="559882721703513" type="buttonYel" />
                     </actions>
                 </event-block>
                 <event-block sid="104168451574204">
@@ -490,7 +683,21 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-3" name="Create object" sid="136019254373557" type="System">
+                                    <param id="0" name="Object to create">faisca</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">guitarButtonBox.X</param>
+                                    <param id="3" name="Y">guitarButtonBox.Y</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="940420630461060" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="995591762192360" type="faisca" />
                                 <action id="-9" name="Destroy" sid="959065906254345" type="noteBox" />
+                                <action id="-9" name="Set value" sid="235177106908889" type="System">
+                                    <param id="0" name="Variable">erros</param>
+                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="847394007630605">
@@ -505,8 +712,50 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-3" name="Create object" sid="461706967514490" type="System">
+                                    <param id="0" name="Object to create">faisca</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">microphoneButtonBox.X</param>
+                                    <param id="3" name="Y">microphoneButtonBox.Y</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="358724504476342" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="163567091547370" type="faisca" />
                                 <action id="-9" name="Destroy" sid="494014660168927" type="noteBox" />
+                                <action id="-9" name="Set value" sid="338915417945907" type="System">
+                                    <param id="0" name="Variable">erros</param>
+                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                </action>
                             </actions>
+                        </event-block>
+                        <event-block sid="887203122211763">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="916726342413848" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="688727421519683">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="853968616698553" type="player1box">
+                                            <param id="0" name="Instance variable">playing</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;guitar&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="997033854337300" type="player1box">
+                                            <param id="0" name="Instance variable">playing</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;microphone&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="970321145868524" type="System">
+                                            <param id="0" name="Variable">erros</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

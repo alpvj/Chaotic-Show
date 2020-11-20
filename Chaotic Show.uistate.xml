@@ -46,5 +46,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/guitarButtonBox/" />
         <folder expanded="1" path="animation-folder/microphoneButtonBox/" />
         <folder expanded="1" path="animation-folder/noteBox/" />
+        <folder expanded="1" path="animation-folder/fretboard/" />
+        <folder expanded="1" path="animation-folder/spawnRed/" />
+        <folder expanded="1" path="animation-folder/spawnYel/" />
+        <folder expanded="1" path="animation-folder/spawnBlue/" />
+        <folder expanded="1" path="animation-folder/targetRed/" />
+        <folder expanded="1" path="animation-folder/targetYel/" />
+        <folder expanded="1" path="animation-folder/buttonRed/" />
+        <folder expanded="1" path="animation-folder/buttonYel/" />
+        <folder expanded="1" path="animation-folder/faisca/" />
+        <folder expanded="1" path="animation-folder/errobar/" />
     </folders-expanded>
 </c2uistate>

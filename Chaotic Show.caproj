@@ -18,13 +18,13 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
         <effect author="Scirra" id="softlight">Soft Light</effect>
     </used-effects>
@@ -213,7 +213,7 @@
         <object-type name="collision" sid="290824285529981">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Solid" sid="570092026507704">
+                <behavior-type name="Solid" sid="147916428782357">
                     <behavior id="solid" />
                 </behavior-type>
             </behaviors>
@@ -351,16 +351,22 @@
         </object-type>
         <object-type name="guitarButtonBox" sid="508468597218349">
             <plugin id="Sprite" />
+            <effects>
+                <effect-type name="BlurVertical">
+                    <effect id="blurvertical" />
+                </effect-type>
+            </effects>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="429725955355677" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="429725955355677" speed="5">
+                    <frame duration="1" hotspotX="0.508475" hotspotY="0.510204" original-source="C:\Users\Andre\Desktop\guitarflash\animaNd.png">
                         <collision-poly>
-                            <point x="0.767123" y="0.306507" />
-                            <point x="0.780394" y="0.648117" />
-                            <point x="0.505993" y="0.815069" />
-                            <point x="0.204195" y="0.610445" />
-                            <point x="0.238014" y="0.306507" />
-                            <point x="0.520548" y="0.19863" />
+                            <point x="0.387712" y="0.539541" />
+                            <point x="0.455508" y="0.579082" />
+                            <point x="0.543432" y="0.55436" />
+                            <point x="0.579979" y="0.445547" />
+                            <point x="0.529131" y="0.375516" />
+                            <point x="0.443326" y="0.371113" />
+                            <point x="0.381886" y="0.440689" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -368,16 +374,22 @@
         </object-type>
         <object-type name="microphoneButtonBox" sid="152291298027925">
             <plugin id="Sprite" />
+            <effects>
+                <effect-type name="BlurVertical">
+                    <effect id="blurvertical" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="678757553760150" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="C:\Users\Andre\Desktop\guitarflash\animaNd.png">
                         <collision-poly>
-                            <point x="0.489726" y="0.191781" />
-                            <point x="0.768836" y="0.327055" />
-                            <point x="0.778253" y="0.663528" />
-                            <point x="0.510916" y="0.820848" />
-                            <point x="0.226455" y="0.65625" />
-                            <point x="0.246575" y="0.304795" />
+                            <point x="0.506697" y="0.316326" />
+                            <point x="0.645089" y="0.413265" />
+                            <point x="0.600447" y="0.553571" />
+                            <point x="0.515625" y="0.627958" />
+                            <point x="0.38058" y="0.518061" />
+                            <point x="0.386161" y="0.42602" />
+                            <point x="0.417411" y="0.364796" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -385,10 +397,10 @@
         </object-type>
         <object-type name="noteBox" sid="988552380179387">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="type" sid="952400261005321" type="string" />
+            </instance-variables>
             <behaviors>
-                <behavior-type name="Bullet" sid="278922877255034">
-                    <behavior id="Bullet" />
-                </behavior-type>
                 <behavior-type name="DestroyOutsideLayout" sid="261858916613851">
                     <behavior id="destroy" />
                 </behavior-type>
@@ -407,6 +419,154 @@
         </object-type>
         <object-type name="AJAX" sid="150014058869607">
             <plugin id="AJAX" />
+        </object-type>
+        <object-type name="fretboard" sid="584774849380909">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="897329290201059" speed="5">
+                    <frame duration="1" hotspotX="0.746479" hotspotY="0.428571" original-source="C:\Users\Andre\Desktop\guitarflash\oie_transparent.png">
+                        <collision-poly>
+                            <point x="0" y="0.308717" />
+                            <point x="0.740853" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.989709" />
+                            <point x="0" y="0.989709" />
+                            <point x="0" y="0.428571" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="spawnRed" sid="607183398495116">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="343017063045517" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="spawnYel" sid="791264333636783">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="462377782907364" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="spawnBlue" sid="320270981624077">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="551922270547949" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="targetRed" sid="597316991734719">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="795028941042698" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="targetYel" sid="377539262165781">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="678241136497565" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buttonRed" sid="335013363383308">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="504121718697557">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="438189993929387">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="651344647806374" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506024" original-source="C:\Users\Andre\Desktop\guitarflash\notan1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buttonYel" sid="733958350707648">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="394165928103290">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="771803905902259">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="127851808606679" speed="5">
+                    <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="C:\Users\Andre\Desktop\guitarflash\notan2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="faisca" sid="792979274141513">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="899257243295706" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.496063" original-source="C:\Users\Andre\Desktop\guitarflash\faisca.png">
+                        <collision-poly>
+                            <point x="0.367188" y="0.362205" />
+                            <point x="0.5" y="0.283465" />
+                            <point x="0.671875" y="0.322835" />
+                            <point x="0.703125" y="0.496063" />
+                            <point x="0.625" y="0.622047" />
+                            <point x="0.5" y="0.76378" />
+                            <point x="0.335938" y="0.661417" />
+                            <point x="0.210938" y="0.496063" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="errobar" sid="780665550853620">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="311513201077302" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.873626" />
+                            <point x="0" y="0.758242" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502762" original-source="C:\Users\Andre\Desktop\guitarflash\frets.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.0277778" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.878453" />
+                            <point x="0" y="0.762431" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.514286" hotspotY="0.502762">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.878453" />
+                            <point x="0" y="0.762431" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

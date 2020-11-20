@@ -56,5 +56,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/buttonYel/" />
         <folder expanded="1" path="animation-folder/faisca/" />
         <folder expanded="1" path="animation-folder/errobar/" />
+        <folder expanded="1" path="animation-folder/lever/" />
+        <folder expanded="1" path="animation-folder/uselever/" />
+        <folder expanded="1" path="animation-folder/boombox/" />
+        <folder expanded="1" path="animation-folder/boomboxcontroller/" />
+        <folder expanded="1" path="animation-folder/buttonboombox/" />
     </folders-expanded>
 </c2uistate>

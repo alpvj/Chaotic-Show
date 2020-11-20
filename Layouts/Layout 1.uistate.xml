@@ -4,11 +4,11 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>639.501</position-x>
-        <position-y>315.329</position-y>
-        <position-z>106.549</position-z>
-        <lookat-x>639.501</lookat-x>
-        <lookat-y>315.329</lookat-y>
+        <position-x>718.835</position-x>
+        <position-y>386.171</position-y>
+        <position-z>117.204</position-z>
+        <lookat-x>718.835</lookat-x>
+        <lookat-y>386.171</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>0</snap-to-grid>
@@ -23,14 +23,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="UI" />
+    <active-layer name="scenariocollision" />
     <layers>
         <layer locked="1" name="background" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="scenario" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="scenariocollision" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="GuitarHero" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="players" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="objects" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="UI" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="scenariocollision" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="GuitarHero" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="players" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="objects" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="UI" parallax-in-editor="0" visible="1" />
     </layers>
 </c2uistate>

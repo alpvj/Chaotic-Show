@@ -16,10 +16,12 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -563,6 +565,189 @@
                             <point x="1" y="0.878453" />
                             <point x="0" y="0.762431" />
                             <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lever" sid="595460296572381">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="luzleft" sid="947543690196553" type="boolean" />
+                <instance-variable name="luzright" sid="439054173767756" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="440315737767111" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Andre\Desktop\guitarflash\lever-pngrepo-com.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.660156" />
+                            <point x="0.955078" y="0.0449219" />
+                            <point x="0.699219" y="0.5" />
+                            <point x="0.988281" y="0.988281" />
+                            <point x="0.0117188" y="0.988281" />
+                            <point x="0.59375" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.40625" y="0.5" />
+                            <point x="0.988281" y="0.988281" />
+                            <point x="0.0117188" y="0.988281" />
+                            <point x="0.300781" y="0.5" />
+                            <point x="0.0449219" y="0.0449219" />
+                            <point x="0.5" y="0.660156" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="uselever" sid="862425894262267">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="255515280890025" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="boombox" sid="665567681931906">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="mirror" sid="381412151061901" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="6" loop="1" name="playing" pingpong="0" repeatcount="1" repeatto="0" sid="444987079042328" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.497391" original-source="C:\Users\Andre\Desktop\guitarflash\boombox.png">
+                        <collision-poly>
+                            <point x="0.0774648" y="0.0573913" />
+                            <point x="0.5" y="0.0208696" />
+                            <point x="0.901408" y="0.0730435" />
+                            <point x="0.950704" y="0.49913" />
+                            <point x="0.852113" y="0.890435" />
+                            <point x="0.5" y="0.984348" />
+                            <point x="0.0892019" y="0.933913" />
+                            <point x="0.0234742" y="0.49913" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.497391" original-source="C:\Users\Andre\Desktop\guitarflash\boombox_1.png">
+                        <collision-poly>
+                            <point x="0.0774648" y="0.0573913" />
+                            <point x="0.5" y="0.0208696" />
+                            <point x="0.901408" y="0.0730435" />
+                            <point x="0.950704" y="0.49913" />
+                            <point x="0.852113" y="0.890435" />
+                            <point x="0.5" y="0.984348" />
+                            <point x="0.0892019" y="0.933913" />
+                            <point x="0.0234742" y="0.49913" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.497391">
+                        <collision-poly>
+                            <point x="0.0774648" y="0.0573913" />
+                            <point x="0.5" y="0.0208696" />
+                            <point x="0.901408" y="0.0730435" />
+                            <point x="0.950704" y="0.49913" />
+                            <point x="0.852113" y="0.890435" />
+                            <point x="0.5" y="0.984348" />
+                            <point x="0.0892019" y="0.933913" />
+                            <point x="0.0234742" y="0.49913" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.497391">
+                        <collision-poly>
+                            <point x="0.0774648" y="0.0573913" />
+                            <point x="0.5" y="0.0208696" />
+                            <point x="0.901408" y="0.0730435" />
+                            <point x="0.950704" y="0.49913" />
+                            <point x="0.852113" y="0.890435" />
+                            <point x="0.5" y="0.984348" />
+                            <point x="0.0892019" y="0.933913" />
+                            <point x="0.0234742" y="0.49913" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.497391">
+                        <collision-poly>
+                            <point x="0.0774648" y="0.0573913" />
+                            <point x="0.5" y="0.0208696" />
+                            <point x="0.901408" y="0.0730435" />
+                            <point x="0.950704" y="0.49913" />
+                            <point x="0.852113" y="0.890435" />
+                            <point x="0.5" y="0.984348" />
+                            <point x="0.0892019" y="0.933913" />
+                            <point x="0.0234742" y="0.49913" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.497391">
+                        <collision-poly>
+                            <point x="0.0774648" y="0.0573913" />
+                            <point x="0.5" y="0.0208696" />
+                            <point x="0.901408" y="0.0730435" />
+                            <point x="0.950704" y="0.49913" />
+                            <point x="0.852113" y="0.890435" />
+                            <point x="0.5" y="0.984348" />
+                            <point x="0.0892019" y="0.933913" />
+                            <point x="0.0234742" y="0.49913" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="1" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="618980895482209" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.497391">
+                        <collision-poly>
+                            <point x="0.0774648" y="0.0573913" />
+                            <point x="0.5" y="0.0208696" />
+                            <point x="0.901408" y="0.0730435" />
+                            <point x="0.950704" y="0.49913" />
+                            <point x="0.852113" y="0.890435" />
+                            <point x="0.5" y="0.984348" />
+                            <point x="0.0892019" y="0.933913" />
+                            <point x="0.0234742" y="0.49913" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="boomboxcontroller" sid="142956634265131">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="broken" sid="572936326199277" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="800861181289222" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ProgressBar" sid="760176326532663">
+            <plugin id="progressbar" />
+            <behaviors>
+                <behavior-type name="Timer" sid="685814006890738">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="buttonboombox" sid="982538163724360">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="865679147555233" speed="0">
+                    <frame duration="1" hotspotX="0.507692" hotspotY="1" original-source="C:\Users\Andre\Desktop\guitarflash\arcade_64_sheet_pre.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0.753846" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0.907692" y="1" />
+                            <point x="0" y="0.396226" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.507692" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0.753846" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0.907692" y="0.88" />
+                            <point x="0" y="0" />
+                            <point x="0" y="0.72" />
                         </collision-poly>
                     </frame>
                 </animation>

@@ -139,12 +139,17 @@
                             <param id="0" name="Animation">&quot;spawn&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="7" name="Play (by name)" sid="778677563665727" type="Audio">
-                            <param id="0" name="Folder">1</param>
-                            <param id="1" name="Audio file name">&quot;Priscila Senna - Labirinto&quot;</param>
-                            <param id="3" name="Loop">0</param>
-                            <param id="4" name="Volume">0</param>
-                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        <action id="0" name="Play" sid="283026769929528" type="Audio">
+                            <param id="0" name="Audio file">instrumental</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="342126230675157" type="Audio">
+                            <param id="0" name="Audio file">vocal</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                         <action id="1" name="Request project file" sid="373874691101360" type="AJAX">
                             <param id="0" name="Tag">&quot;musicMatrix&quot;</param>
@@ -733,26 +738,54 @@
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="187287681583673">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="112552477855374" type="buttonRed">
-                            <param id="0" name="Object">collision</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="485975943632930" type="buttonRed" />
-                    </actions>
-                </event-block>
-                <event-block sid="674502491998595">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="489204498223687" type="buttonYel">
-                            <param id="0" name="Object">collision</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="559882721703513" type="buttonYel" />
-                    </actions>
+                    <sub-events>
+                        <event-block sid="714069116718298">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="412847591336923" type="noteBox">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="851891777142320" type="Audio">
+                                    <param id="0" name="Audio file">error_guitar</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;breakGuitar&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="412831468993152" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="6" name="Stop" sid="569729449661810" type="Audio">
+                                    <param id="0" name="Tag">&quot;breakGuitar&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="637403082760823">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="646506905201431" type="noteBox">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="589754338912843" type="Audio">
+                                    <param id="0" name="Audio file">error_vocal_microphone</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;breakGuitar&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="246996247182696" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="6" name="Stop" sid="602786193555568" type="Audio">
+                                    <param id="0" name="Tag">&quot;breakVocal&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="104168451574204">
                     <conditions>

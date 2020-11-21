@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="1">Layout 1</layout>
-        <event-sheet active="1" order="2">Event sheet 1</event-sheet>
+        <layout active="1" order="0">Layout 1</layout>
+        <event-sheet order="1">Event sheet 1</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -21,11 +21,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="1" />
     <folders-expanded>
-        <folder expanded="0" path="object-folder/" />
+        <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="layout-folder/" />
         <folder expanded="0" path="event-folder/" />
-        <folder expanded="0" path="file-folder/" />
-        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="file-folder/Data/" />
@@ -33,7 +33,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/player1animation/" />
         <folder expanded="1" path="animation-folder/stage/" />
         <folder expanded="1" path="animation-folder/collision/" />
-        <folder expanded="1" path="animation-folder/useUI/" />
+        <folder expanded="1" path="animation-folder/useP1UI/" />
         <folder expanded="1" path="animation-folder/portalExit/" />
         <folder expanded="1" path="animation-folder/portalEntry/" />
         <folder expanded="1" path="animation-folder/guitarra/" />
@@ -61,5 +61,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/boombox/" />
         <folder expanded="1" path="animation-folder/boomboxcontroller/" />
         <folder expanded="1" path="animation-folder/buttonboombox/" />
+        <folder expanded="1" path="animation-folder/useP2UI/" />
+        <folder expanded="1" path="animation-folder/player2animation/" />
+        <folder expanded="1" path="animation-folder/player2box/" />
+        <folder expanded="1" path="animation-folder/textcontrast/" />
+        <folder expanded="1" path="animation-folder/exclamationBoombox/" />
+        <folder expanded="1" path="animation-folder/exclamationLights/" />
     </folders-expanded>
 </c2uistate>

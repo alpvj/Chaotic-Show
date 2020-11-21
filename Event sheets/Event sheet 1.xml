@@ -5,161 +5,165 @@
     <events>
         <variable constant="0" name="erros" sid="168738857236116" static="0" type="number">0</variable>
         <variable constant="0" name="seconds" sid="667540924311542" static="0" type="number">0</variable>
-        <event-block sid="293746695986146">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="922117956470180" type="System">
-                    <param id="0" name="Interval (seconds)">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Add to" sid="683078248313227" type="System">
-                    <param id="0" name="Variable">seconds</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
+        <event-group description="" sid="911570993507320" title="System">
             <sub-events>
-                <event-block sid="740083460387894">
+                <event-block sid="293746695986146">
                     <conditions>
-                        <condition id="1" name="Compare at XY" sid="896973946716114" type="musicArray">
-                            <param id="0" name="X">seconds</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Comparison">0</param>
-                            <param id="3" name="Value">1</param>
+                        <condition id="-6" name="Every X seconds" sid="922117956470180" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="264220218506126" type="Function">
-                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="206396937450994">
-                    <conditions>
-                        <condition id="1" name="Compare at XY" sid="154206558756322" type="musicArray">
-                            <param id="0" name="X">seconds</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Comparison">0</param>
-                            <param id="3" name="Value">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="192819574812655" type="Function">
-                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="990118291607408">
-                    <conditions>
-                        <condition id="1" name="Compare at XY" sid="586224194375873" type="musicArray">
-                            <param id="0" name="X">seconds</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Comparison">0</param>
-                            <param id="3" name="Value">4</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="104372039612623" type="Function">
-                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
-                        </action>
-                        <action id="0" name="Call function" sid="305174163996439" type="Function">
-                            <param id="0" name="Name">&quot;spawnNote&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="606449265724133">
-                    <conditions>
-                        <condition id="1" name="Compare at XY" sid="385470765463698" type="musicArray">
-                            <param id="0" name="X">seconds</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Comparison">0</param>
-                            <param id="3" name="Value">5</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="915350479512569" type="Function">
-                            <param id="0" name="Name">&quot;turnofflight&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;L&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="207512807310880">
-                    <conditions>
-                        <condition id="1" name="Compare at XY" sid="628923439421947" type="musicArray">
-                            <param id="0" name="X">seconds</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Comparison">0</param>
-                            <param id="3" name="Value">6</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="822746832815630" type="Function">
-                            <param id="0" name="Name">&quot;turnofflight&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;R&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="321118877936762">
-                    <conditions>
-                        <condition id="1" name="Compare at XY" sid="700773993221508" type="musicArray">
-                            <param id="0" name="X">seconds</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Comparison">0</param>
-                            <param id="3" name="Value">7</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set boolean" sid="254503560994897" type="boomboxcontroller">
-                            <param id="0" name="Instance variable">broken</param>
+                        <action id="-10" name="Add to" sid="683078248313227" type="System">
+                            <param id="0" name="Variable">seconds</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="740083460387894">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="896973946716114" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="264220218506126" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="206396937450994">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="154206558756322" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="192819574812655" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="990118291607408">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="586224194375873" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="104372039612623" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;guitar&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="305174163996439" type="Function">
+                                    <param id="0" name="Name">&quot;spawnNote&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;microphone&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="606449265724133">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="385470765463698" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="915350479512569" type="Function">
+                                    <param id="0" name="Name">&quot;turnofflight&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;L&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="207512807310880">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="628923439421947" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="822746832815630" type="Function">
+                                    <param id="0" name="Name">&quot;turnofflight&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;R&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="321118877936762">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="700773993221508" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="254503560994897" type="boomboxcontroller">
+                                    <param id="0" name="Instance variable">broken</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="997227479971600">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="624333870784169" type="musicArray">
+                                    <param id="0" name="X">seconds</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="281936181655815" type="Function">
+                                    <param id="0" name="Name">&quot;endgame&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-group description="" sid="455030802016515" title="Player">
-            <sub-events>
-                <event-block sid="329483357098990">
+                <event-block sid="927874784598845">
                     <conditions>
-                        <condition id="-2" name="On start of layout" sid="667703378282274" type="System" />
+                        <condition id="-2" name="On start of layout" sid="398362409274026" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set position to another object" sid="701697263746176" type="player1animation">
-                            <param id="0" name="Object">player1box</param>
-                            <param id="1" name="Image point (optional)">0</param>
-                        </action>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="449314494841196" type="player1animation">
-                            <param id="0" name="Pin to">player1box</param>
-                            <param id="1" name="Mode">1</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="182162058676324" type="player1animation">
-                            <param id="0" name="Animation">&quot;spawn&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="0" name="Play" sid="283026769929528" type="Audio">
+                        <action id="0" name="Play" sid="719889512380683" type="Audio">
                             <param id="0" name="Audio file">instrumental</param>
                             <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;instrumental&quot;</param>
                         </action>
-                        <action id="0" name="Play" sid="342126230675157" type="Audio">
+                        <action id="0" name="Play" sid="845551015714098" type="Audio">
                             <param id="0" name="Audio file">vocal</param>
                             <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;vocal&quot;</param>
                         </action>
-                        <action id="1" name="Request project file" sid="373874691101360" type="AJAX">
+                        <action id="1" name="Request project file" sid="597590799528061" type="AJAX">
                             <param id="0" name="Tag">&quot;musicMatrix&quot;</param>
                             <param id="1" name="File">json-music</param>
                         </action>
-                        <action id="-9" name="Set value" sid="963030332879051" type="System">
+                        <action id="-9" name="Set value" sid="796609504748437" type="System">
                             <param id="0" name="Variable">erros</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-9" name="Set value" sid="208145768840405" type="System">
+                        <action id="-9" name="Set value" sid="352876847666286" type="System">
                             <param id="0" name="Variable">seconds</param>
                             <param id="1" name="Value">0</param>
                         </action>
@@ -179,6 +183,39 @@
                             <param id="0" name="X">0</param>
                             <param id="1" name="Y">0</param>
                             <param id="2" name="Value">27</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="746783042947430">
+                    <conditions>
+                        <condition id="0" name="On function" sid="175459931620403" type="Function">
+                            <param id="0" name="Name">&quot;endgame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="547181317465304" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="455030802016515" title="Player1">
+            <sub-events>
+                <event-block sid="329483357098990">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="667703378282274" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="701697263746176" type="player1animation">
+                            <param id="0" name="Object">player1box</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="449314494841196" type="player1animation">
+                            <param id="0" name="Pin to">player1box</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="182162058676324" type="player1animation">
+                            <param id="0" name="Animation">&quot;spawn&quot;</param>
+                            <param id="1" name="From">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -273,7 +310,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="243693232545427">
+                <event-block any="1" sid="243693232545427">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="939360858106342" type="Keyboard">
                             <param id="0" name="Key">32</param>
@@ -319,6 +356,11 @@
                                     <param id="0" name="Instance variable">playing</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;none&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="944291105223398" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -397,6 +439,11 @@
                                     <param id="0" name="Instance variable">playing</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;none&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="646994107158582" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -496,7 +543,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="378062671828754" type="useUI">
+                        <action id="-15" name="Set visible" sid="378062671828754" type="useP1UI">
                             <param id="0" name="Visibility">1</param>
                         </action>
                     </actions>
@@ -506,8 +553,393 @@
                         <condition id="-22" name="Else" sid="124017811993741" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="908101864257884" type="useUI">
+                        <action id="-15" name="Set visible" sid="908101864257884" type="useP1UI">
                             <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="136926516950585">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="471615821993811" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="567866130146935" type="Function">
+                            <param id="0" name="Name">&quot;p1PlayNote&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="951335327961836" title="Player2">
+            <sub-events>
+                <event-block sid="313239198629092">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="814192004770483" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="908406035063947" type="player2animation">
+                            <param id="0" name="Object">player2box</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="194860245520548" type="player2animation">
+                            <param id="0" name="Pin to">player2box</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="978159494440634" type="player2animation">
+                            <param id="0" name="Animation">&quot;spawn&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="153928125703296">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="712240429908511" type="player2box" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="273832570391295" type="player2animation">
+                            <param id="0" name="Animation">&quot;walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="591060506390449">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="819177083213265" type="player2box" />
+                        <condition id="2" inverted="1" name="Is playing" sid="488653486192344" type="player2animation">
+                            <param id="0" name="Animation">&quot;spawn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="898217116511280" type="player2animation">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="718627872156075">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="771065263295516" type="player2box">
+                            <param id="0" name="Instance variable">playing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;none&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="706762348355998">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="977595757317876" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="207622494410639" type="player2box">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="365680336335468">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="368313015329835" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="990998865969241" type="player2box">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="453124819047054" type="player2animation">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="650062842509805">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="646741783958509" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="117057196736916" type="player2box">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="913661593623902">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="597635729067833" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="871431421385982" type="player2box">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="152546952135841" type="player2animation">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="456225085772944">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="721605253295988" type="Keyboard">
+                            <param id="0" name="Key">73</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="675735039361929">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="632000651877807" type="player2box">
+                                    <param id="0" name="Object">portalEntry</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="478368256679754" type="player2box">
+                                    <param id="0" name="Object">portalExit</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="777659353705016">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="639263408777910" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="628799411740359" type="player2box">
+                                    <param id="0" name="Object">portalExit</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="219267877775511" type="player2box">
+                                    <param id="0" name="X">336</param>
+                                    <param id="1" name="Y">321</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="484636503311611">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="975995504631384" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="431044656930785" type="player2box">
+                                    <param id="0" name="Object">guitarbox</param>
+                                </condition>
+                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="605821449346833" type="player2box" />
+                                <condition id="-7" name="Compare instance variable" sid="362437023345149" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;none&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="626648591580163" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="331157321832397" type="guitarra">
+                                    <param id="0" name="Object">player2animation</param>
+                                    <param id="1" name="Image point (optional)">&quot;guitar&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="229158583780229" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;guitar&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="217172184491449">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="947830322998275" type="player2animation" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="671603150684454" type="guitarra">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="759329191050784" type="guitarra">
+                                            <param id="0" name="Angle">360-24</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="168616438989140">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="726532501680322" type="player2animation" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="483010020585991" type="guitarra">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="248700748783202" type="guitarra">
+                                            <param id="0" name="Angle">24</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="476264891933559">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="250723092131277" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="716224303089747" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="523158196433781" type="player2box">
+                                    <param id="0" name="Object">guitarbox</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="613131662854756" type="guitarra">
+                                    <param id="0" name="X">-100</param>
+                                    <param id="1" name="Y">-100</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="775054440211075" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="519994038525304">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="783782844139025" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="567294809193554" type="player2box">
+                                    <param id="0" name="Object">microphonebox</param>
+                                </condition>
+                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="950898863209400" type="player2box" />
+                                <condition id="-7" name="Compare instance variable" sid="296813508669509" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;none&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="748566660309142" type="player1box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="914650748009068" type="microfone">
+                                    <param id="0" name="Object">player2animation</param>
+                                    <param id="1" name="Image point (optional)">&quot;microphone&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="467467704634525" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;microphone&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="834289884501838">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="223676201056416" type="player2animation" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="108977372081221" type="microfone">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="177566068455510">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="702238153679704" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="556806763110934" type="microfone">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="874816973044021">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="536037443038200" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="681970064694295" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="514580292782030" type="player2box">
+                                    <param id="0" name="Object">microphonebox</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="343236070075611" type="microfone">
+                                    <param id="0" name="X">-100</param>
+                                    <param id="1" name="Y">-100</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="625649547245170" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="535826208335078">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="439980104044525" type="player2box">
+                                    <param id="0" name="Object">uselever</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="150207053442908" type="lever">
+                                    <param id="0" name="Instance variable">luzleft</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="617701492986162" type="lever">
+                                    <param id="0" name="Instance variable">luzright</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="591918257176204">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="100225019901374" type="player2box">
+                            <param id="0" name="Object">portalEntry</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="191018921424169" type="player2box">
+                            <param id="0" name="Object">portalExit</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="369969896807640" type="player2box">
+                            <param id="0" name="Object">guitarbox</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="379962240612957" type="player2box">
+                            <param id="0" name="Object">microphonebox</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="223300764570314" type="player2box">
+                            <param id="0" name="Object">uselever</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="949252472499336" type="player2box">
+                            <param id="0" name="Object">boomboxcontroller</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="453984275398580" type="useP2UI">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="771530891152627">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="405641225174457" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="506596532345125" type="useP2UI">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="975966640812509">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="823274246341243" type="Keyboard">
+                            <param id="0" name="Key">79</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="943108424185621" type="Function">
+                            <param id="0" name="Name">&quot;p2PlayNote&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -522,10 +954,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="-7" name="Set size" sid="190501133946637" type="buttonRed">
-                            <param id="0" name="Width">min(42,42/(sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 ) * 0.05))</param>
-                            <param id="1" name="Height">min(32/(sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 ) * 0.05),32)</param>
-                        </action>
                         <action id="-7" name="Set size" sid="266077842316781" type="buttonRed">
                             <param id="0" name="Width">42- (42*( sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 )   /   sqrt((spawnRed.X-guitarButtonBox.X)^2 + (spawnRed.Y-guitarButtonBox.Y)^2 )  ))</param>
                             <param id="1" name="Height">32 - (32*( sqrt((buttonRed.X-guitarButtonBox.X)^2 + (buttonRed.Y-guitarButtonBox.Y)^2 )   /   sqrt((spawnRed.X-guitarButtonBox.X)^2 + (spawnRed.Y-guitarButtonBox.Y)^2 )  ))</param>
@@ -733,10 +1161,6 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="591883592941244" type="noteBox" />
-                        <action id="-10" name="Add to" sid="797563441122581" type="System">
-                            <param id="0" name="Variable">erros</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="714069116718298">
@@ -748,17 +1172,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Play" sid="851891777142320" type="Audio">
-                                    <param id="0" name="Audio file">error_guitar</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;breakGuitar&quot;</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="412831468993152" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action id="6" name="Stop" sid="569729449661810" type="Audio">
-                                    <param id="0" name="Tag">&quot;breakGuitar&quot;</param>
+                                <action id="0" name="Call function" sid="308793564610218" type="Function">
+                                    <param id="0" name="Name">&quot;playGuitarError&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
@@ -771,136 +1187,324 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Play" sid="589754338912843" type="Audio">
-                                    <param id="0" name="Audio file">error_vocal_microphone</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;breakGuitar&quot;</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="246996247182696" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action id="6" name="Stop" sid="602786193555568" type="Audio">
-                                    <param id="0" name="Tag">&quot;breakVocal&quot;</param>
+                                <action id="0" name="Call function" sid="210958992421033" type="Function">
+                                    <param id="0" name="Name">&quot;playMicroError&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="104168451574204">
+                <event-block sid="358699868473859">
                     <conditions>
-                        <condition id="0" name="On key pressed" sid="346396762170682" type="Keyboard">
-                            <param id="0" name="Key">69</param>
+                        <condition id="0" name="On function" sid="904882307932730" type="Function">
+                            <param id="0" name="Name">&quot;playGuitarError&quot;</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="551274637037066" type="boomboxcontroller">
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="982524833114230" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="856981675067121" type="Audio">
+                            <param id="0" name="Audio file">error_guitar</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;breakGuitar&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="472809490215095" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="6" name="Stop" sid="312676975244971" type="Audio">
+                            <param id="0" name="Tag">&quot;breakGuitar&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="204824393263627" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="902964046814829" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="215298472659360" type="System">
+                            <param id="0" name="Variable">erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="272321827409672">
+                    <conditions>
+                        <condition id="0" name="On function" sid="601582395401286" type="Function">
+                            <param id="0" name="Name">&quot;playMicroError&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="328215690204922" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="463190777756750" type="Audio">
+                            <param id="0" name="Audio file">error_vocal_microphone</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;breakGuitar&quot;</param>
+                        </action>
+                        <action id="23" name="Seek to" sid="348872489600628" type="Audio">
+                            <param id="0" name="Tag">&quot;breakGuitar&quot;</param>
+                            <param id="1" name="Position">0.30</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="660406781718701" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action disabled="1" id="6" name="Stop" sid="337967833984309" type="Audio">
+                            <param id="0" name="Tag">&quot;breakVocal&quot;</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="828598729277047" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="476710207815680" type="System">
+                            <param id="0" name="Variable">erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="588219775075608">
+                    <conditions>
+                        <condition id="0" name="On function" sid="981995725895709" type="Function">
+                            <param id="0" name="Name">&quot;p1PlayNote&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="274151724577946" type="boomboxcontroller">
                             <param id="0" name="Instance variable">broken</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="215805141406879">
+                        <event-block sid="799162220642420">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="476933921372417" type="noteBox">
+                                <condition id="1" name="Is overlapping another object" sid="720023284345185" type="noteBox">
                                     <param id="0" name="Object">guitarButtonBox</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="558543504191706" type="player1box">
+                                <condition id="-7" name="Compare instance variable" sid="458034466285342" type="player1box">
                                     <param id="0" name="Instance variable">playing</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;guitar&quot;</param>
                                 </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="564607717746019" type="lever">
+                                <condition id="-8" name="Is boolean instance variable set" sid="484198714356265" type="lever">
                                     <param id="0" name="Instance variable">luzleft</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="136019254373557" type="System">
+                                <action id="-3" name="Create object" sid="965853316720026" type="System">
                                     <param id="0" name="Object to create">faisca</param>
                                     <param id="1" name="Layer">3</param>
                                     <param id="2" name="X">guitarButtonBox.X</param>
                                     <param id="3" name="Y">guitarButtonBox.Y</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="940420630461060" type="System">
+                                <action id="-16" name="Wait" sid="237937842945249" type="System">
                                     <param id="0" name="Seconds">0.1</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="995591762192360" type="faisca" />
-                                <action id="-9" name="Destroy" sid="959065906254345" type="noteBox" />
-                                <action id="-9" name="Set value" sid="235177106908889" type="System">
+                                <action id="-9" name="Destroy" sid="620646773118520" type="faisca" />
+                                <action id="-9" name="Destroy" sid="556013594410204" type="noteBox" />
+                                <action id="-9" name="Set value" sid="361267804912493" type="System">
                                     <param id="0" name="Variable">erros</param>
                                     <param id="1" name="Value">max(erros-2,0)</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="847394007630605">
+                        <event-block sid="384043201926495">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="513999696674658" type="noteBox">
+                                <condition id="-22" name="Else" sid="271078333416163" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="202053642690754" type="noteBox">
                                     <param id="0" name="Object">microphoneButtonBox</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="425098135463557" type="player1box">
+                                <condition id="-7" name="Compare instance variable" sid="127606839183419" type="player1box">
                                     <param id="0" name="Instance variable">playing</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;microphone&quot;</param>
                                 </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="408081980777281" type="lever">
+                                <condition id="-8" name="Is boolean instance variable set" sid="904858087596092" type="lever">
                                     <param id="0" name="Instance variable">luzright</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="461706967514490" type="System">
+                                <action id="-3" name="Create object" sid="348823116753788" type="System">
                                     <param id="0" name="Object to create">faisca</param>
                                     <param id="1" name="Layer">3</param>
                                     <param id="2" name="X">microphoneButtonBox.X</param>
                                     <param id="3" name="Y">microphoneButtonBox.Y</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="358724504476342" type="System">
+                                <action id="-16" name="Wait" sid="506687733676199" type="System">
                                     <param id="0" name="Seconds">0.1</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="163567091547370" type="faisca" />
-                                <action id="-9" name="Destroy" sid="494014660168927" type="noteBox" />
-                                <action id="-9" name="Set value" sid="338915417945907" type="System">
+                                <action id="-9" name="Destroy" sid="718220598866687" type="faisca" />
+                                <action id="-9" name="Destroy" sid="698988657345665" type="noteBox" />
+                                <action id="-9" name="Set value" sid="363057588711660" type="System">
                                     <param id="0" name="Variable">erros</param>
                                     <param id="1" name="Value">max(erros-2,0)</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="887203122211763">
+                        <event-block sid="139986672868235">
                             <conditions>
-                                <condition id="-22" name="Else" sid="916726342413848" type="System" />
+                                <condition id="-22" name="Else" sid="411257930963415" type="System" />
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="688727421519683">
+                                <event-block sid="514947425461607">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="853968616698553" type="player1box">
+                                        <condition id="-7" name="Compare instance variable" sid="913581587954560" type="player1box">
                                             <param id="0" name="Instance variable">playing</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;guitar&quot;</param>
                                         </condition>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="282650035482089" type="lever">
+                                        <condition id="-8" name="Is boolean instance variable set" sid="557649982581138" type="lever">
                                             <param id="0" name="Instance variable">luzleft</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Add to" sid="970321145868524" type="System">
-                                            <param id="0" name="Variable">erros</param>
-                                            <param id="1" name="Value">1</param>
+                                        <action id="0" name="Call function" sid="499934018492942" type="Function">
+                                            <param id="0" name="Name">&quot;playGuitarError&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="146570043199085">
+                                <event-block sid="513861406203541">
                                     <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="941074812085246" type="lever">
-                                            <param id="0" name="Instance variable">luzright</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="163263689127209" type="player1box">
+                                        <condition id="-7" name="Compare instance variable" sid="622591382956304" type="player1box">
                                             <param id="0" name="Instance variable">playing</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;microphone&quot;</param>
                                         </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="514623853738080" type="lever">
+                                            <param id="0" name="Instance variable">luzright</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Add to" sid="159617242625197" type="System">
-                                            <param id="0" name="Variable">erros</param>
-                                            <param id="1" name="Value">1</param>
+                                        <action id="0" name="Call function" sid="661520220309346" type="Function">
+                                            <param id="0" name="Name">&quot;playMicroError&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="537306823693151">
+                    <conditions>
+                        <condition id="0" name="On function" sid="679925972924805" type="Function">
+                            <param id="0" name="Name">&quot;p2PlayNote&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="442497084791241" type="boomboxcontroller">
+                            <param id="0" name="Instance variable">broken</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="523777745875740">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="844310690079387" type="noteBox">
+                                    <param id="0" name="Object">guitarButtonBox</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="159181528132490" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;guitar&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="465219252817976" type="lever">
+                                    <param id="0" name="Instance variable">luzleft</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="140104510767579" type="System">
+                                    <param id="0" name="Object to create">faisca</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">guitarButtonBox.X</param>
+                                    <param id="3" name="Y">guitarButtonBox.Y</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="684924935856345" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="347212406350271" type="faisca" />
+                                <action id="-9" name="Destroy" sid="771282870593222" type="noteBox" />
+                                <action id="-9" name="Set value" sid="310976330813939" type="System">
+                                    <param id="0" name="Variable">erros</param>
+                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="203103650021087">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="124838456155869" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="690900152966714" type="noteBox">
+                                    <param id="0" name="Object">microphoneButtonBox</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="703831096730729" type="player2box">
+                                    <param id="0" name="Instance variable">playing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;microphone&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="471455837728743" type="lever">
+                                    <param id="0" name="Instance variable">luzright</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="886667001368114" type="System">
+                                    <param id="0" name="Object to create">faisca</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">microphoneButtonBox.X</param>
+                                    <param id="3" name="Y">microphoneButtonBox.Y</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="244753003811837" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="936468653727081" type="faisca" />
+                                <action id="-9" name="Destroy" sid="995677430487831" type="noteBox" />
+                                <action id="-9" name="Set value" sid="891229849866531" type="System">
+                                    <param id="0" name="Variable">erros</param>
+                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="897317180125537">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="102976836356783" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="380855932117342">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="758495092050688" type="player2box">
+                                            <param id="0" name="Instance variable">playing</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;guitar&quot;</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="291736935292259" type="lever">
+                                            <param id="0" name="Instance variable">luzleft</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="872252885527347" type="Function">
+                                            <param id="0" name="Name">&quot;playGuitarError&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="101536090807997">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="282127671427781" type="player2box">
+                                            <param id="0" name="Instance variable">playing</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;microphone&quot;</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="210534064981991" type="lever">
+                                            <param id="0" name="Instance variable">luzright</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="485344768778204" type="Function">
+                                            <param id="0" name="Name">&quot;playMicroError&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -912,6 +1516,7 @@
         </event-group>
         <event-group description="" sid="203048047847546" title="Cenario">
             <sub-events>
+                <comment>Progress bar do player 1</comment>
                 <event-block sid="785600970631623">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="348526962022162" type="Keyboard">
@@ -922,18 +1527,18 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="3" name="Set progress" sid="367271418233099" type="ProgressBar">
+                        <action id="3" name="Set progress" sid="367271418233099" type="ProgressBarP1">
                             <param id="0" name="Value">0</param>
                         </action>
-                        <action behavior="Timer" id="0" name="Start timer" sid="815996314899841" type="ProgressBar">
+                        <action behavior="Timer" id="0" name="Start timer" sid="815996314899841" type="ProgressBarP1">
                             <param id="0" name="Duration">2</param>
                             <param id="1" name="Type">0</param>
                             <param id="2" name="Tag">&quot;fixboombox&quot;</param>
                         </action>
-                        <action id="1" name="Set visible" sid="702350913965474" type="ProgressBar">
+                        <action id="1" name="Set visible" sid="702350913965474" type="ProgressBarP1">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-3" name="Set position" sid="930272456042505" type="ProgressBar">
+                        <action id="-3" name="Set position" sid="930272456042505" type="ProgressBarP1">
                             <param id="0" name="X">player1animation.X</param>
                             <param id="1" name="Y">player1animation.Y - 80</param>
                         </action>
@@ -950,10 +1555,10 @@
                         <condition behavior="8Direction" id="0" name="Is moving" sid="269491900630737" type="player1box" />
                     </conditions>
                     <actions>
-                        <action behavior="Timer" id="1" name="Stop timer" sid="499023013102911" type="ProgressBar">
+                        <action behavior="Timer" id="1" name="Stop timer" sid="499023013102911" type="ProgressBarP1">
                             <param id="0" name="Tag">&quot;fixboombox&quot;</param>
                         </action>
-                        <action id="1" name="Set visible" sid="628011732893643" type="ProgressBar">
+                        <action id="1" name="Set visible" sid="628011732893643" type="ProgressBarP1">
                             <param id="0" name="Visibility">0</param>
                         </action>
                         <action id="5" name="Set frame" sid="449088936001222" type="buttonboombox">
@@ -969,14 +1574,14 @@
                         <condition id="-1" name="Every tick" sid="993759870594293" type="System" />
                     </conditions>
                     <actions>
-                        <action id="3" name="Set progress" sid="835210801257428" type="ProgressBar">
-                            <param id="0" name="Value">100*(ProgressBar.Timer.CurrentTime(&quot;fixboombox&quot;)/max(ProgressBar.Timer.Duration(&quot;fixboombox&quot;), 1))</param>
+                        <action id="3" name="Set progress" sid="835210801257428" type="ProgressBarP1">
+                            <param id="0" name="Value">100*(ProgressBarP1.Timer.CurrentTime(&quot;fixboombox&quot;)/max(ProgressBarP1.Timer.Duration(&quot;fixboombox&quot;), 1))</param>
                         </action>
                     </actions>
                 </event-block>
                 <event-block sid="364622727436321">
                     <conditions>
-                        <condition behavior="Timer" id="0" name="On timer" sid="699515854722908" type="ProgressBar">
+                        <condition behavior="Timer" id="0" name="On timer" sid="699515854722908" type="ProgressBarP1">
                             <param id="0" name="Tag">&quot;fixboombox&quot;</param>
                         </condition>
                     </conditions>
@@ -984,11 +1589,108 @@
                         <action id="-14" name="Toggle boolean" sid="252906820222231" type="boomboxcontroller">
                             <param id="0" name="Instance variable">broken</param>
                         </action>
-                        <action id="1" name="Set visible" sid="683051529653187" type="ProgressBar">
+                        <action id="1" name="Set visible" sid="683051529653187" type="ProgressBarP1">
                             <param id="0" name="Visibility">0</param>
                         </action>
                         <action id="5" name="Set frame" sid="998000414778036" type="buttonboombox">
                             <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="388170642705784" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="194592893035735" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Progress bar do player 2</comment>
+                <event-block sid="136127715037658">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="928389573806105" type="Keyboard">
+                            <param id="0" name="Key">73</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="533229265895261" type="player2box">
+                            <param id="0" name="Object">boomboxcontroller</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set progress" sid="647525183238601" type="ProgressBarP2">
+                            <param id="0" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="604045556330912" type="ProgressBarP2">
+                            <param id="0" name="Duration">2</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;fixboombox&quot;</param>
+                        </action>
+                        <action id="1" name="Set visible" sid="803938456862842" type="ProgressBarP2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="899183189061440" type="ProgressBarP2">
+                            <param id="0" name="X">player2animation.X</param>
+                            <param id="1" name="Y">player2animation.Y - 80</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="972680033076060" type="buttonboombox">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="520094242791952">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="965734595150750" type="Keyboard">
+                            <param id="0" name="Key">73</param>
+                        </condition>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="111819534648448" type="player2box" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="1" name="Stop timer" sid="386392949176205" type="ProgressBarP2">
+                            <param id="0" name="Tag">&quot;fixboombox&quot;</param>
+                        </action>
+                        <action id="1" name="Set visible" sid="546939372686224" type="ProgressBarP2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="591598026660550" type="buttonboombox">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="810400509552856">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="876232681018462" type="player2box">
+                            <param id="0" name="Object">boomboxcontroller</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="960499120032550" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set progress" sid="137866786697242" type="ProgressBarP2">
+                            <param id="0" name="Value">100*(ProgressBarP2.Timer.CurrentTime(&quot;fixboombox&quot;)/max(ProgressBarP2.Timer.Duration(&quot;fixboombox&quot;), 1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="900255892150275">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="243258163370087" type="ProgressBarP2">
+                            <param id="0" name="Tag">&quot;fixboombox&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="593697421665065" type="boomboxcontroller">
+                            <param id="0" name="Instance variable">broken</param>
+                        </action>
+                        <action id="1" name="Set visible" sid="220080815585816" type="ProgressBarP2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="757269740127909" type="buttonboombox">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="506464490180556" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="149577179584416" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1025,6 +1727,23 @@
                             <param id="0" name="Animation">&quot;idle&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="2" name="Set muted" sid="856707158141750" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="697484269791989" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="486612696545991" type="textcontrast">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="755378861045012" type="tasksboombox">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="209443379960329" type="exclamationBoombox">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="730432852831539">
@@ -1035,6 +1754,12 @@
                         <action id="4" name="Set animation" sid="173587309880484" type="boombox">
                             <param id="0" name="Animation">&quot;playing&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="538632497868032" type="tasksboombox">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="287572695435336" type="exclamationBoombox">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1095,6 +1820,12 @@
                         <action id="5" name="Set frame" sid="702563627578405" type="lever">
                             <param id="0" name="Frame number">0</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="968797872599081" type="taskslight">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="258648468718491" type="exclamationLights">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="431864823546251">
@@ -1104,6 +1835,15 @@
                     <actions>
                         <action id="5" name="Set frame" sid="638271716098564" type="lever">
                             <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="480232343309179" type="textcontrast">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="933192679366132" type="taskslight">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="871760866449416" type="exclamationLights">
+                            <param id="0" name="Visibility">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1149,5 +1889,23 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="315777654701839">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="721480672031975" type="boomboxcontroller">
+                    <param id="0" name="Instance variable">broken</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="689603291170571" type="lever">
+                    <param id="0" name="Instance variable">luzright</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="804392576840168" type="lever">
+                    <param id="0" name="Instance variable">luzleft</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="396160669352846" type="textcontrast">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

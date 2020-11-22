@@ -144,6 +144,7 @@
                         <condition id="-2" name="On start of layout" sid="398362409274026" type="System" />
                     </conditions>
                     <actions>
+                        <action id="33" name="Stop all" sid="481274541026261" type="Audio" />
                         <action id="0" name="Play" sid="719889512380683" type="Audio">
                             <param id="0" name="Audio file">instrumental</param>
                             <param id="2" name="Loop">0</param>
@@ -168,6 +169,14 @@
                             <param id="0" name="Variable">seconds</param>
                             <param id="1" name="Value">0</param>
                         </action>
+                        <action id="-9" name="Set value" sid="719485336862963" type="System">
+                            <param id="0" name="Variable">gamestatus</param>
+                            <param id="1" name="Value">&quot;playing&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="187093987696742" type="Function">
+                            <param id="0" name="Name">&quot;unpausegame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="328863820325726">
@@ -191,6 +200,25 @@
         </event-group>
         <event-group description="" sid="455030802016515" title="Player1">
             <sub-events>
+                <event-block sid="398841121285170">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="506175121462236" type="player1box">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">player2box.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-24" name="Move to top" sid="277764981253370" type="player1animation" />
+                    </actions>
+                </event-block>
+                <event-block sid="684871652631026">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="736061106749271" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Move to bottom" sid="626496848100448" type="player1animation" />
+                    </actions>
+                </event-block>
                 <event-block sid="329483357098990">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="667703378282274" type="System" />
@@ -1938,6 +1966,213 @@
         </event-group>
         <event-group description="" sid="583196962622256" title="GameMechanics">
             <sub-events>
+                <event-block sid="996928277184620">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="503491020125649" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="459870484585019">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="182936893822259" type="pausescreen" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="792025487631710" type="pausescreen">
+                                    <param id="0" name="Frame number">(pausescreen.AnimationFrame=0) ? 2 : pausescreen.AnimationFrame-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="139147003427546">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="398488927939411" type="gameover" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="643245155963783" type="gameover">
+                                    <param id="0" name="Frame number">gameover.AnimationFrame=0 ? 1 : 0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="404900967791489">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="376190174674745" type="gamewon" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="600846402069875" type="gamewon">
+                                    <param id="0" name="Frame number">gamewon.AnimationFrame=0 ? 1 : 0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="163044442338186">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="474086696603454" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="584480049407887">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="731586596659164" type="pausescreen" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="314608666815429" type="pausescreen">
+                                    <param id="0" name="Frame number">(pausescreen.AnimationFrame+1) % 3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="736209852980288">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="468773092479672" type="gameover" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="938492478975680" type="gameover">
+                                    <param id="0" name="Frame number">gameover.AnimationFrame=0 ? 1 : 0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="932963952269189">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="467863084318689" type="gamewon" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="317599603861523" type="gamewon">
+                                    <param id="0" name="Frame number">gamewon.AnimationFrame=0 ? 1 : 0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="137494205209857">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="522982938937894" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="193019242183759">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="897237234999468" type="pausescreen" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Resume</comment>
+                                <event-block sid="308615463494527">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="774813834254748" type="pausescreen">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="434834695264173" type="Function">
+                                            <param id="0" name="Name">&quot;unpausegame&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Restart</comment>
+                                <event-block sid="979462949733760">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="243264191354200" type="pausescreen">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Restart layout" sid="450020319253231" type="System" />
+                                    </actions>
+                                </event-block>
+                                <comment>Exit</comment>
+                                <event-block sid="732962603646613">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="704436113605363" type="pausescreen">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="823485224007302" type="System">
+                                            <param id="0" name="Layout">MainMenu</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="728450963770960">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="586466760048735" type="gameover" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Retry</comment>
+                                <event-block sid="444806798993547">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="591262506324464" type="gameover">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Restart layout" sid="101340592446959" type="System" />
+                                    </actions>
+                                </event-block>
+                                <comment>Exit</comment>
+                                <event-block sid="215455002410186">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="402728485304834" type="gameover">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="533906553301114" type="System">
+                                            <param id="0" name="Layout">MainMenu</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="207785498528973">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="899443289147782" type="gamewon" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Retry</comment>
+                                <event-block sid="402447658032593">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="881272036804346" type="gamewon">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Restart layout" sid="206673202162940" type="System" />
+                                    </actions>
+                                </event-block>
+                                <comment>Exit</comment>
+                                <event-block sid="500172663046797">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="105864664115750" type="gamewon">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="791616972800697" type="System">
+                                            <param id="0" name="Layout">MainMenu</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="236216076584343">
                     <conditions>
                         <condition id="0" name="On function" sid="428280527988057" type="Function">
@@ -1978,6 +2213,9 @@
                         <action id="-12" name="Set group active" sid="906807615235923" type="System">
                             <param id="0" name="Group name">&quot;Cenario&quot;</param>
                             <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="578587745951002" type="pausescreen">
+                            <param id="0" name="Visibility">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -2022,6 +2260,9 @@
                             <param id="0" name="Group name">&quot;Cenario&quot;</param>
                             <param id="1" name="State">1</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="418710664842970" type="pausescreen">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="387889133043263">
@@ -2034,6 +2275,9 @@
                         <action id="0" name="Call function" sid="617250977142976" type="Function">
                             <param id="0" name="Name">&quot;pausegame&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="250817631946943" type="pausescreen">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -2050,6 +2294,9 @@
                                     <param id="0" name="Variable">gamestatus</param>
                                     <param id="1" name="Value">&quot;won&quot;</param>
                                 </action>
+                                <action id="-15" name="Set visible" sid="236581641296421" type="gamewon">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="471012830129232">
@@ -2064,6 +2311,9 @@
                                 <action id="-9" name="Set value" sid="709777265251954" type="System">
                                     <param id="0" name="Variable">gamestatus</param>
                                     <param id="1" name="Value">&quot;lost&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="492473849898688" type="gameover">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2096,6 +2346,7 @@
                         <event-block sid="747668220503815">
                             <conditions>
                                 <condition id="-22" name="Else" sid="105195100894482" type="System" />
+                                <condition id="-9" name="Is visible" sid="931251244858314" type="pausescreen" />
                             </conditions>
                             <actions>
                                 <action id="0" name="Call function" sid="537204484907736" type="Function">

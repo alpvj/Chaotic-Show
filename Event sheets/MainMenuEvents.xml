@@ -15,19 +15,12 @@
                     <param id="3" name="Volume">-10</param>
                     <param id="1" name="Tag (optional)">&quot;mainmenusong&quot;</param>
                 </action>
-                <action id="-16" name="Wait" sid="900013557949920" type="System">
-                    <param id="0" name="Seconds">4</param>
-                </action>
-                <action id="0" name="Call function" sid="382646650699621" type="Function">
-                    <param id="0" name="Name">&quot;gotogame&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
             </actions>
         </event-block>
         <event-block sid="813071601780836">
             <conditions>
-                <condition id="3" name="On touched object" sid="707380990645030" type="Touch">
-                    <param id="0" name="Object">soundbutton</param>
+                <condition id="0" name="On key pressed" sid="707380990645030" type="Keyboard">
+                    <param id="0" name="Key">77</param>
                 </condition>
             </conditions>
             <actions>
@@ -46,14 +39,227 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="224351631428813" type="System">
-                    <param id="0" name="Layout">Game</param>
-                </action>
                 <action id="6" name="Stop" sid="339400452146734" type="Audio">
                     <param id="0" name="Tag">&quot;mainmenusong&quot;</param>
                 </action>
                 <action id="8" name="Set silent" sid="402664066769819" type="Audio">
                     <param id="0" name="Mode">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="224351631428813" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="407544131173477">
+            <conditions>
+                <condition id="0" name="On function" sid="119291152979251" type="Function">
+                    <param id="0" name="Name">&quot;choosestage&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="824677399955570" type="mainmenu">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="293894909520402" type="choosestage">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="184235404631699">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="861908180736682" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="527990860755699">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="458419425570422" type="mainmenu" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="409832729035135" type="mainmenu">
+                            <param id="0" name="Frame number">((mainmenu.AnimationFrame-1) &lt; 0)  ? 2 : (mainmenu.AnimationFrame-1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="605245751266738">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="266240381997981" type="choosestage" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="405366890465773" type="choosestage">
+                            <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 2 : ( (choosestage.AnimationFrame=2) ? 0 : ((choosestage.AnimationFrame=1) ? 3 : 1) )</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="535531461248639">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="189859359772583" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="734258580598149">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="485941024466031" type="mainmenu" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="212527743344842" type="mainmenu">
+                            <param id="0" name="Frame number">(mainmenu.AnimationFrame+1)%3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="966343612853212">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="882091078647714" type="choosestage" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="521077737383044" type="choosestage">
+                            <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 2 : ( (choosestage.AnimationFrame=2) ? 0 : ((choosestage.AnimationFrame=1) ? 3 : 1) )</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="825755728222008">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="355770540637892" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="700716996971822">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="532730731712298" type="choosestage" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="320473442967530" type="choosestage">
+                            <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 1 : ( (choosestage.AnimationFrame=1) ? 0 : ((choosestage.AnimationFrame=2) ? 3 : 2) )</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="116806863943093">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="958043217661348" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="458685334855308">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="596413952619125" type="choosestage" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="763640939009594" type="choosestage">
+                            <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 1 : ( (choosestage.AnimationFrame=1) ? 0 : ((choosestage.AnimationFrame=2) ? 3 : 2) )</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="202893992244867">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="250328138277493" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="593057471940292">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="114216460997597" type="choosestage" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Pitty</comment>
+                        <event-block sid="242314215304929">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="521184813384663" type="choosestage">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="328925669920052" type="Function">
+                                    <param id="0" name="Name">&quot;gotogame&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Blocked</comment>
+                        <event-block sid="524086723568196">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="220650560750974" type="System" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="686112664945470">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="663221247807943" type="mainmenu" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Play</comment>
+                        <event-block sid="860057871193101">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="274996279946582" type="mainmenu">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="600833680543566" type="Function">
+                                    <param id="0" name="Name">&quot;choosestage&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Controls</comment>
+                        <event-block sid="584040990198806">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="940364001171869" type="mainmenu">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <comment>Credits</comment>
+                        <event-block sid="720451908829995">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="224881962687463" type="mainmenu">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="616804826418903">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="895204778964374" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="889436293160411" type="mainmenu">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="162700101883386" type="choosestage">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>

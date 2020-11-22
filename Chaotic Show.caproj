@@ -17,7 +17,6 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
@@ -65,6 +64,9 @@
             <behaviors>
                 <behavior-type name="8Direction" sid="635487925251693">
                     <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="350223135393055">
+                    <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -904,6 +906,9 @@
                 <behavior-type name="8Direction" sid="846093666055585">
                     <behavior id="EightDir" />
                 </behavior-type>
+                <behavior-type name="Solid" sid="852053080149393">
+                    <behavior id="solid" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="198308232901958" speed="5">
@@ -991,8 +996,54 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Touch" sid="991083169204425">
-            <plugin id="Touch" />
+        <object-type name="mainmenu" sid="925333558106013">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="529031916773927" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\MainMenu_Play.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\MainMenu_Controls.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\MainMenu_Credits.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="choosestage" sid="227624944332764">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="584536499864498" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Musics_01.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Musics_02.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Musics_03.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Musics_04.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pausescreen" sid="157284250933327">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="836900954992630" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Pause Screen_resume.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Pause Screen_restart.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Pause Screen_exit.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gameover" sid="756582883400588">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="646348827352433" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\GameOver_Retry.jpg" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\GameOver_Exit.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gamewon" sid="636623912956046">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826401419088604" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Sucess_retry.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Sucess_exit.png" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -1022,11 +1073,6 @@
             </properties>
         </global-instance>
         <global-instance type="AJAX" uid="48" />
-        <global-instance type="Touch" uid="79">
-            <properties>
-                <use-mouse-input>Yes</use-mouse-input>
-            </properties>
-        </global-instance>
     </global-instances>
     <sounds-folder>
         <file name="error_guitar.ogg" />

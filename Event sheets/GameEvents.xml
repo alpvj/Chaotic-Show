@@ -1151,12 +1151,7 @@
                             <param id="0" name="Name">&quot;spawnNote&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-10" name="Add to" sid="645147855232810" type="System">
-                            <param id="0" name="Variable">totalnotes</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="724815924104789">
                             <conditions>
@@ -1246,6 +1241,10 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="591883592941244" type="noteBox" />
+                        <action id="-10" name="Add to" sid="626300273296569" type="System">
+                            <param id="0" name="Variable">totalnotes</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="714069116718298">
@@ -1414,6 +1413,10 @@
                                     <param id="0" name="Variable">notesscored</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-10" name="Add to" sid="561188025943128" type="System">
+                                    <param id="0" name="Variable">totalnotes</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="384043201926495">
@@ -1457,6 +1460,10 @@
                                 </action>
                                 <action id="-10" name="Add to" sid="275919436351208" type="System">
                                     <param id="0" name="Variable">notesscored</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="428573147156278" type="System">
+                                    <param id="0" name="Variable">totalnotes</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -1560,6 +1567,10 @@
                                     <param id="0" name="Variable">notesscored</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-10" name="Add to" sid="437763200259902" type="System">
+                                    <param id="0" name="Variable">totalnotes</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="203103650021087">
@@ -1603,6 +1614,10 @@
                                 </action>
                                 <action id="-10" name="Add to" sid="322060938125445" type="System">
                                     <param id="0" name="Variable">notesscored</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="957048705908671" type="System">
+                                    <param id="0" name="Variable">totalnotes</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -2414,6 +2429,7 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <variable constant="0" name="porcentagem" sid="376768412449466" static="0" type="number">0</variable>
                         <event-block sid="610627510581096">
                             <conditions>
                                 <condition id="1" name="Compare parameter" sid="749606372330352" type="Function">
@@ -2433,8 +2449,12 @@
                                 <action id="-15" name="Set visible" sid="298877106904997" type="finalscore">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="455839891191946" type="System">
+                                    <param id="0" name="Variable">porcentagem</param>
+                                    <param id="1" name="Value">round(notesscored/max(totalnotes,1)*100)</param>
+                                </action>
                                 <action id="5" name="Set frame" sid="469464888072284" type="finalscore">
-                                    <param id="0" name="Frame number">0</param>
+                                    <param id="0" name="Frame number">(porcentagem &gt;= 33) + (porcentagem &gt;= 66) + (porcentagem &gt;= 95)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2508,6 +2528,19 @@
                 <action id="0" name="Call function" sid="461973031271687" type="Function">
                     <param id="0" name="Name">&quot;endgame&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;won&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="300720390205822">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="640710988270076" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="816704531889115" type="tasksboombox">
+                    <param id="0" name="Text">round(notesscored/max(totalnotes,1)*100)</param>
+                </action>
+                <action id="-15" name="Set visible" sid="769271786947949" type="tasksboombox">
+                    <param id="0" name="Visibility">1</param>
                 </action>
             </actions>
         </event-block>

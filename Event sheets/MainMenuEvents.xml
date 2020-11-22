@@ -12,8 +12,11 @@
                 <action id="0" name="Play" sid="319040283079314" type="Audio">
                     <param id="0" name="Audio file">welcomejungle</param>
                     <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">-10</param>
+                    <param id="3" name="Volume">-20</param>
                     <param id="1" name="Tag (optional)">&quot;mainmenusong&quot;</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="782710155998002" type="System">
+                    <param id="0" name="Time scale">1.0</param>
                 </action>
             </actions>
         </event-block>
@@ -24,11 +27,19 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Call function" sid="603140520251397" type="Function">
+                    <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
                 <action id="8" name="Set silent" sid="437256200602955" type="Audio">
                     <param id="0" name="Mode">2</param>
                 </action>
                 <action id="5" name="Set frame" sid="969205449577602" type="soundbutton">
                     <param id="0" name="Frame number">(soundbutton.AnimationFrame+1) % 2</param>
+                </action>
+                <action id="0" name="Call function" sid="202643773879457" type="Function">
+                    <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>
@@ -50,21 +61,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="407544131173477">
-            <conditions>
-                <condition id="0" name="On function" sid="119291152979251" type="Function">
-                    <param id="0" name="Name">&quot;choosestage&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-15" name="Set visible" sid="824677399955570" type="mainmenu">
-                    <param id="0" name="Visibility">0</param>
-                </action>
-                <action id="-15" name="Set visible" sid="293894909520402" type="choosestage">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="184235404631699">
             <conditions>
                 <condition id="0" name="On key pressed" sid="861908180736682" type="Keyboard">
@@ -81,6 +77,10 @@
                         <action id="5" name="Set frame" sid="409832729035135" type="mainmenu">
                             <param id="0" name="Frame number">((mainmenu.AnimationFrame-1) &lt; 0)  ? 2 : (mainmenu.AnimationFrame-1)</param>
                         </action>
+                        <action id="0" name="Call function" sid="140364041867282" type="Function">
+                            <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="605245751266738">
@@ -90,6 +90,10 @@
                     <actions>
                         <action id="5" name="Set frame" sid="405366890465773" type="choosestage">
                             <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 2 : ( (choosestage.AnimationFrame=2) ? 0 : ((choosestage.AnimationFrame=1) ? 3 : 1) )</param>
+                        </action>
+                        <action id="0" name="Call function" sid="395768439635464" type="Function">
+                            <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -111,6 +115,10 @@
                         <action id="5" name="Set frame" sid="212527743344842" type="mainmenu">
                             <param id="0" name="Frame number">(mainmenu.AnimationFrame+1)%3</param>
                         </action>
+                        <action id="0" name="Call function" sid="559630638809351" type="Function">
+                            <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="966343612853212">
@@ -120,6 +128,10 @@
                     <actions>
                         <action id="5" name="Set frame" sid="521077737383044" type="choosestage">
                             <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 2 : ( (choosestage.AnimationFrame=2) ? 0 : ((choosestage.AnimationFrame=1) ? 3 : 1) )</param>
+                        </action>
+                        <action id="0" name="Call function" sid="290576803694624" type="Function">
+                            <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -141,6 +153,10 @@
                         <action id="5" name="Set frame" sid="320473442967530" type="choosestage">
                             <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 1 : ( (choosestage.AnimationFrame=1) ? 0 : ((choosestage.AnimationFrame=2) ? 3 : 2) )</param>
                         </action>
+                        <action id="0" name="Call function" sid="936328637833495" type="Function">
+                            <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -160,6 +176,10 @@
                     <actions>
                         <action id="5" name="Set frame" sid="763640939009594" type="choosestage">
                             <param id="0" name="Frame number">(choosestage.AnimationFrame=0) ? 1 : ( (choosestage.AnimationFrame=1) ? 0 : ((choosestage.AnimationFrame=2) ? 3 : 2) )</param>
+                        </action>
+                        <action id="0" name="Call function" sid="994162937803579" type="Function">
+                            <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -188,6 +208,13 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="812725674558699" type="Function">
+                                    <param id="0" name="Name">&quot;playLoadSound&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="652975672482168" type="System">
+                                    <param id="0" name="Seconds">1.5</param>
+                                </action>
                                 <action id="0" name="Call function" sid="328925669920052" type="Function">
                                     <param id="0" name="Name">&quot;gotogame&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -199,7 +226,12 @@
                             <conditions>
                                 <condition id="-22" name="Else" sid="220650560750974" type="System" />
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="0" name="Call function" sid="311571293197581" type="Function">
+                                    <param id="0" name="Name">&quot;playNegativeSound&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -207,7 +239,15 @@
                     <conditions>
                         <condition id="-9" name="Is visible" sid="663221247807943" type="mainmenu" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-15" name="Set visible" sid="231023937501602" type="mainmenu">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="858278236857405" type="Function">
+                            <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <comment>Play</comment>
                         <event-block sid="860057871193101">
@@ -218,9 +258,8 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="600833680543566" type="Function">
-                                    <param id="0" name="Name">&quot;choosestage&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                <action id="-15" name="Set visible" sid="146761432573380" type="choosestage">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -232,7 +271,11 @@
                                     <param id="1" name="Number">1</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-15" name="Set visible" sid="188833090486839" type="controls">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                         <comment>Credits</comment>
                         <event-block sid="720451908829995">
@@ -260,6 +303,54 @@
                 </action>
                 <action id="-15" name="Set visible" sid="162700101883386" type="choosestage">
                     <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="399487772925810" type="controls">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="259221578403440">
+            <conditions>
+                <condition id="0" name="On function" sid="212367543294505" type="Function">
+                    <param id="0" name="Name">&quot;playSwitchSound&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="232386122796460" type="Audio">
+                    <param id="0" name="Audio file">click_2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="113107252997547">
+            <conditions>
+                <condition id="0" name="On function" sid="204895773911691" type="Function">
+                    <param id="0" name="Name">&quot;playNegativeSound&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="846098667921703" type="Audio">
+                    <param id="0" name="Audio file">negative_2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">3</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="615455586675327">
+            <conditions>
+                <condition id="0" name="On function" sid="829264495814005" type="Function">
+                    <param id="0" name="Name">&quot;playLoadSound&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="770608553033667" type="Audio">
+                    <param id="0" name="Audio file">load</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>

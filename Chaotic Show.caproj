@@ -1045,6 +1045,14 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="controls" sid="755056014482607">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="958934133811607" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Andre\Desktop\guitarflash\Screens\Controls.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1077,6 +1085,9 @@
     <sounds-folder>
         <file name="error_guitar.ogg" />
         <file name="error_vocal_microphone.ogg" />
+        <file name="click_2.ogg" />
+        <file name="negative_2.ogg" />
+        <file name="load.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="instrumental.ogg" />

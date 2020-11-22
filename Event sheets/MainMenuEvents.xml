@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MainMenuEvents</name>
+    <events>
+        <event-block sid="558370219896817">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="832193061372937" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="835630184337539" type="Audio" />
+                <action id="0" name="Play" sid="319040283079314" type="Audio">
+                    <param id="0" name="Audio file">welcomejungle</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;mainmenusong&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="900013557949920" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action id="0" name="Call function" sid="382646650699621" type="Function">
+                    <param id="0" name="Name">&quot;gotogame&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="813071601780836">
+            <conditions>
+                <condition id="3" name="On touched object" sid="707380990645030" type="Touch">
+                    <param id="0" name="Object">soundbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="437256200602955" type="Audio">
+                    <param id="0" name="Mode">2</param>
+                </action>
+                <action id="5" name="Set frame" sid="969205449577602" type="soundbutton">
+                    <param id="0" name="Frame number">(soundbutton.AnimationFrame+1) % 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="465578383253857">
+            <conditions>
+                <condition id="0" name="On function" sid="795903172790460" type="Function">
+                    <param id="0" name="Name">&quot;gotogame&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="224351631428813" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+                <action id="6" name="Stop" sid="339400452146734" type="Audio">
+                    <param id="0" name="Tag">&quot;mainmenusong&quot;</param>
+                </action>
+                <action id="8" name="Set silent" sid="402664066769819" type="Audio">
+                    <param id="0" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

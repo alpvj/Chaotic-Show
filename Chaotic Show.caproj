@@ -3,9 +3,9 @@
     <name>Chaotic Show</name>
     <description></description>
     <version>1.0.0.0</version>
-    <author></author>
+    <author>Grupo 8</author>
     <author-email></author-email>
-    <author-website>http://</author-website>
+    <author-website>https://github.com/andreluisv/Chaotic-Show</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>27900</saved-with-version>
@@ -17,6 +17,7 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
@@ -40,7 +41,8 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <use-loader-layout>0</use-loader-layout>
+    <first-layout>MainMenu</first-layout>
+    <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Enable WebGL">On</prop>
@@ -770,21 +772,7 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="2" loop="0" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="101192712988943" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\Individual Sprites\idle.png">
-                        <image-point name="microphone" x="1.23077" y="1.19417" />
-                        <image-point name="guitar" x="0.384615" y="0.708738" />
-                        <collision-poly>
-                            <point x="0.24359" y="0.184466" />
-                            <point x="0.5" y="0.0194175" />
-                            <point x="0.846154" y="0.116505" />
-                            <point x="0.935897" y="0.495146" />
-                            <point x="0.923077" y="0.941748" />
-                            <point x="0.5" y="0.980583" />
-                            <point x="0.115385" y="0.912621" />
-                            <point x="0.025641" y="0.495146" />
-                        </collision-poly>
-                    </frame>
+                <animation framecount="1" loop="0" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="101192712988943" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <image-point name="microphone" x="1.23077" y="1.19417" />
                         <image-point name="guitar" x="0.384615" y="0.708738" />
@@ -977,13 +965,44 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="blackscreen" sid="265557552177305">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="783098228685140" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="exclamationRedStatus" sid="271280844557988">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="805510064553233" speed="3">
+                    <frame duration="1" hotspotX="0.485437" hotspotY="0.545455" />
+                    <frame duration="1" hotspotX="0.485437" hotspotY="0.545455" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="soundbutton" sid="961889226120170">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="711992498112796" speed="0">
+                    <frame duration="1" hotspotX="1" hotspotY="1" original-source="C:\Users\Andre\Downloads\Player - Among Us\buttons.png" />
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="991083169204425">
+            <plugin id="Touch" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Game.xml</layout>
+        <layout>MainMenu.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>GameEvents.xml</event-sheet>
+        <event-sheet>MainMenuEvents.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
@@ -1003,6 +1022,11 @@
             </properties>
         </global-instance>
         <global-instance type="AJAX" uid="48" />
+        <global-instance type="Touch" uid="79">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder>
         <file name="error_guitar.ogg" />
@@ -1011,6 +1035,7 @@
     <music-folder>
         <file name="instrumental.ogg" />
         <file name="vocal.ogg" />
+        <file name="welcomejungle.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

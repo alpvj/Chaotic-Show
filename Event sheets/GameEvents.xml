@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Event sheet 1</name>
+    <name>GameEvents</name>
     <events>
+        <variable constant="0" name="gamestatus" sid="908842483572491" static="0" type="text">playing</variable>
         <variable constant="0" name="erros" sid="168738857236116" static="0" type="number">0</variable>
         <variable constant="0" name="seconds" sid="667540924311542" static="0" type="number">0</variable>
         <event-group description="" sid="911570993507320" title="System">
@@ -132,7 +133,7 @@
                             <actions>
                                 <action id="0" name="Call function" sid="281936181655815" type="Function">
                                     <param id="0" name="Name">&quot;endgame&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                    <param id="1" name="Parameter {n}">&quot;won&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -184,16 +185,6 @@
                             <param id="1" name="Y">0</param>
                             <param id="2" name="Value">27</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="746783042947430">
-                    <conditions>
-                        <condition id="0" name="On function" sid="175459931620403" type="Function">
-                            <param id="0" name="Name">&quot;endgame&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-26" name="Restart layout" sid="547181317465304" type="System" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -947,6 +938,21 @@
         </event-group>
         <event-group description="" sid="202834130555318" title="GuitarHero">
             <sub-events>
+                <event-block sid="469708957380689">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="802221512669332" type="System">
+                            <param id="0" name="Variable">erros</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="874262411116981" type="Function">
+                            <param id="0" name="Name">&quot;endgame&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;lost&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="698849227977694">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="156564228687049" type="System">
@@ -992,6 +998,29 @@
                             <actions>
                                 <action id="-17" name="Move forward" sid="882574003124060" type="noteBox">
                                     <param id="0" name="Distance">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="645063581476900">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="739656177269271" type="errobar">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="172195812972897" type="exclamationRedStatus">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="454631164995166">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="724867122350979" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="769805270541490" type="exclamationRedStatus">
+                                    <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1246,10 +1275,10 @@
                             <param id="0" name="Audio file">error_vocal_microphone</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;breakGuitar&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;breakMicro&quot;</param>
                         </action>
                         <action id="23" name="Seek to" sid="348872489600628" type="Audio">
-                            <param id="0" name="Tag">&quot;breakGuitar&quot;</param>
+                            <param id="0" name="Tag">&quot;breakMicro&quot;</param>
                             <param id="1" name="Position">0.30</param>
                         </action>
                         <action id="-16" name="Wait" sid="660406781718701" type="System">
@@ -1429,7 +1458,7 @@
                                 <action id="-9" name="Destroy" sid="771282870593222" type="noteBox" />
                                 <action id="-9" name="Set value" sid="310976330813939" type="System">
                                     <param id="0" name="Variable">erros</param>
-                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                    <param id="1" name="Value">max(erros-1.25,0)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1462,7 +1491,7 @@
                                 <action id="-9" name="Destroy" sid="995677430487831" type="noteBox" />
                                 <action id="-9" name="Set value" sid="891229849866531" type="System">
                                     <param id="0" name="Variable">erros</param>
-                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                    <param id="1" name="Value">max(erros-1.25,0)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1516,6 +1545,24 @@
         </event-group>
         <event-group description="" sid="203048047847546" title="Cenario">
             <sub-events>
+                <event-block sid="315777654701839">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="721480672031975" type="boomboxcontroller">
+                            <param id="0" name="Instance variable">broken</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="689603291170571" type="lever">
+                            <param id="0" name="Instance variable">luzright</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="804392576840168" type="lever">
+                            <param id="0" name="Instance variable">luzleft</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="396160669352846" type="textcontrast">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Progress bar do player 1</comment>
                 <event-block sid="785600970631623">
                     <conditions>
@@ -1889,23 +1936,177 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="315777654701839">
-            <conditions>
-                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="721480672031975" type="boomboxcontroller">
-                    <param id="0" name="Instance variable">broken</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="689603291170571" type="lever">
-                    <param id="0" name="Instance variable">luzright</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="804392576840168" type="lever">
-                    <param id="0" name="Instance variable">luzleft</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-15" name="Set visible" sid="396160669352846" type="textcontrast">
-                    <param id="0" name="Visibility">0</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="583196962622256" title="GameMechanics">
+            <sub-events>
+                <event-block sid="236216076584343">
+                    <conditions>
+                        <condition id="0" name="On function" sid="428280527988057" type="Function">
+                            <param id="0" name="Name">&quot;pauseGame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="291510245573229" type="blackscreen">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="658077212484429" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="662810042653334" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="120955440823877" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="622375862850999" type="Audio">
+                            <param id="0" name="Tag">&quot;breakMicro&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="646994594794822" type="Audio">
+                            <param id="0" name="Tag">&quot;breakGuitar&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="837394522922608" type="System">
+                            <param id="0" name="Group name">&quot;Player1&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="835427547925283" type="System">
+                            <param id="0" name="Group name">&quot;Player2&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="906807615235923" type="System">
+                            <param id="0" name="Group name">&quot;Cenario&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="488262724235038">
+                    <conditions>
+                        <condition id="0" name="On function" sid="599066441044011" type="Function">
+                            <param id="0" name="Name">&quot;unpauseGame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="966837842405461" type="blackscreen">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="386331422692173" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="616466219359843" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="952657276559181" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="197546156698331" type="Audio">
+                            <param id="0" name="Tag">&quot;breakMicro&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="22" name="Set paused" sid="480947961499943" type="Audio">
+                            <param id="0" name="Tag">&quot;breakGuitar&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="697563159128655" type="System">
+                            <param id="0" name="Group name">&quot;Player1&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="335059969721836" type="System">
+                            <param id="0" name="Group name">&quot;Player2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="436753557868776" type="System">
+                            <param id="0" name="Group name">&quot;Cenario&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="387889133043263">
+                    <conditions>
+                        <condition id="0" name="On function" sid="714039943785262" type="Function">
+                            <param id="0" name="Name">&quot;endgame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="617250977142976" type="Function">
+                            <param id="0" name="Name">&quot;pausegame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="610627510581096">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="749606372330352" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;won&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="860796812280895" type="System">
+                                    <param id="0" name="Variable">gamestatus</param>
+                                    <param id="1" name="Value">&quot;won&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="471012830129232">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="140529637441218" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;lost&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="709777265251954" type="System">
+                                    <param id="0" name="Variable">gamestatus</param>
+                                    <param id="1" name="Value">&quot;lost&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="443329216319823">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="998381014340336" type="Keyboard">
+                            <param id="0" name="Key">27</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="553039740796957" type="System">
+                            <param id="0" name="Variable">gamestatus</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;playing&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="189056046411631">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Is visible" sid="545349351841421" type="blackscreen" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="901168892748978" type="Function">
+                                    <param id="0" name="Name">&quot;pausegame&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="747668220503815">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="105195100894482" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="537204484907736" type="Function">
+                                    <param id="0" name="Name">&quot;unpausegame&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

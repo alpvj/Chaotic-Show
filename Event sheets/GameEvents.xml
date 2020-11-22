@@ -3,6 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GameEvents</name>
     <events>
+        <variable constant="0" name="notesscored" sid="982725446150288" static="0" type="number">0</variable>
+        <variable constant="0" name="totalnotes" sid="493913785001512" static="0" type="number">0</variable>
+        <variable constant="0" name="streak" sid="985912359934743" static="0" type="number">0</variable>
+        <variable constant="0" name="streakatual" sid="705708020963831" static="0" type="number">0</variable>
         <variable constant="0" name="gamestatus" sid="908842483572491" static="0" type="text">playing</variable>
         <variable constant="0" name="erros" sid="168738857236116" static="0" type="number">0</variable>
         <variable constant="0" name="seconds" sid="667540924311542" static="0" type="number">0</variable>
@@ -161,6 +165,26 @@
                             <param id="0" name="Tag">&quot;musicMatrix&quot;</param>
                             <param id="1" name="File">json-music</param>
                         </action>
+                        <action id="-9" name="Set value" sid="141361217814341" type="System">
+                            <param id="0" name="Variable">notesscored</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="901031549136268" type="System">
+                            <param id="0" name="Variable">totalnotes</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="218169996080262" type="System">
+                            <param id="0" name="Variable">streak</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="195682239252874" type="System">
+                            <param id="0" name="Variable">streakatual</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="719485336862963" type="System">
+                            <param id="0" name="Variable">gamestatus</param>
+                            <param id="1" name="Value">&quot;playing&quot;</param>
+                        </action>
                         <action id="-9" name="Set value" sid="796609504748437" type="System">
                             <param id="0" name="Variable">erros</param>
                             <param id="1" name="Value">0</param>
@@ -168,10 +192,6 @@
                         <action id="-9" name="Set value" sid="352876847666286" type="System">
                             <param id="0" name="Variable">seconds</param>
                             <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="719485336862963" type="System">
-                            <param id="0" name="Variable">gamestatus</param>
-                            <param id="1" name="Value">&quot;playing&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="187093987696742" type="Function">
                             <param id="0" name="Name">&quot;unpausegame&quot;</param>
@@ -1131,7 +1151,12 @@
                             <param id="0" name="Name">&quot;spawnNote&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-10" name="Add to" sid="645147855232810" type="System">
+                            <param id="0" name="Variable">totalnotes</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="724815924104789">
                             <conditions>
@@ -1289,6 +1314,10 @@
                             <param id="0" name="Variable">erros</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-9" name="Set value" sid="534581524057225" type="System">
+                            <param id="0" name="Variable">streakatual</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="272321827409672">
@@ -1325,6 +1354,10 @@
                         <action id="-10" name="Add to" sid="476710207815680" type="System">
                             <param id="0" name="Variable">erros</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="151245877731249" type="System">
+                            <param id="0" name="Variable">streakatual</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1367,7 +1400,19 @@
                                 <action id="-9" name="Destroy" sid="556013594410204" type="noteBox" />
                                 <action id="-9" name="Set value" sid="361267804912493" type="System">
                                     <param id="0" name="Variable">erros</param>
-                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                    <param id="1" name="Value">max(erros-1.25,0)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="526135823696871" type="System">
+                                    <param id="0" name="Variable">streakatual</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="752484618205903" type="System">
+                                    <param id="0" name="Variable">streak</param>
+                                    <param id="1" name="Value">max(streak, streakatual)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="932812121998373" type="System">
+                                    <param id="0" name="Variable">notesscored</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1399,8 +1444,20 @@
                                 <action id="-9" name="Destroy" sid="718220598866687" type="faisca" />
                                 <action id="-9" name="Destroy" sid="698988657345665" type="noteBox" />
                                 <action id="-9" name="Set value" sid="363057588711660" type="System">
-                                    <param id="0" name="Variable">erros</param>
-                                    <param id="1" name="Value">max(erros-2,0)</param>
+                                    <param id="0" name="Variable">gamestatus</param>
+                                    <param id="1" name="Value">max(erros-1.25,0)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="808643472526035" type="System">
+                                    <param id="0" name="Variable">streakatual</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="162046533623478" type="System">
+                                    <param id="0" name="Variable">streak</param>
+                                    <param id="1" name="Value">max(streak, streakatual)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="275919436351208" type="System">
+                                    <param id="0" name="Variable">notesscored</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1491,6 +1548,18 @@
                                     <param id="0" name="Variable">erros</param>
                                     <param id="1" name="Value">max(erros-1.25,0)</param>
                                 </action>
+                                <action id="-10" name="Add to" sid="970232471179562" type="System">
+                                    <param id="0" name="Variable">streakatual</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="943296013628519" type="System">
+                                    <param id="0" name="Variable">streak</param>
+                                    <param id="1" name="Value">max(streak, streakatual)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="321251109079404" type="System">
+                                    <param id="0" name="Variable">notesscored</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="203103650021087">
@@ -1523,6 +1592,18 @@
                                 <action id="-9" name="Set value" sid="891229849866531" type="System">
                                     <param id="0" name="Variable">erros</param>
                                     <param id="1" name="Value">max(erros-1.25,0)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="209024569594697" type="System">
+                                    <param id="0" name="Variable">streakatual</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="361801106711772" type="System">
+                                    <param id="0" name="Variable">streak</param>
+                                    <param id="1" name="Value">max(streak, streakatual)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="322060938125445" type="System">
+                                    <param id="0" name="Variable">notesscored</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2349,6 +2430,12 @@
                                 <action id="-15" name="Set visible" sid="236581641296421" type="gamewon">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
+                                <action id="-15" name="Set visible" sid="298877106904997" type="finalscore">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="469464888072284" type="finalscore">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="471012830129232">
@@ -2411,5 +2498,18 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="370814282511874">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="713831964679641" type="Keyboard">
+                    <param id="0" name="Key">70</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="461973031271687" type="Function">
+                    <param id="0" name="Name">&quot;endgame&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;won&quot;</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

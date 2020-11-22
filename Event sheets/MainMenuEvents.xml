@@ -285,7 +285,11 @@
                                     <param id="1" name="Number">2</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-15" name="Set visible" sid="556765196849035" type="credits">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -305,6 +309,9 @@
                     <param id="0" name="Visibility">0</param>
                 </action>
                 <action id="-15" name="Set visible" sid="399487772925810" type="controls">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="531877083172089" type="credits">
                     <param id="0" name="Visibility">0</param>
                 </action>
             </actions>

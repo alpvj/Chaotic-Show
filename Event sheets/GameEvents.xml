@@ -1777,6 +1777,12 @@
                             <param id="0" name="Tag">&quot;vocal&quot;</param>
                             <param id="1" name="State">1</param>
                         </action>
+                        <action disabled="1" id="12" name="Remove all effects" sid="193676084157944" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                        </action>
+                        <action disabled="1" id="12" name="Remove all effects" sid="154140214470752" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Progress bar do player 2</comment>
@@ -1866,6 +1872,12 @@
                             <param id="0" name="Tag">&quot;vocal&quot;</param>
                             <param id="1" name="State">1</param>
                         </action>
+                        <action disabled="1" id="12" name="Remove all effects" sid="216938567218470" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                        </action>
+                        <action disabled="1" id="12" name="Remove all effects" sid="992330531433833" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="888600612356788">
@@ -1908,6 +1920,22 @@
                         <action id="2" name="Set muted" sid="697484269791989" type="Audio">
                             <param id="0" name="Tag">&quot;vocal&quot;</param>
                             <param id="1" name="State">0</param>
+                        </action>
+                        <action disabled="1" id="31" name="Add distortion effect" sid="696249722857507" type="Audio">
+                            <param id="0" name="Tag">&quot;instrumental&quot;</param>
+                            <param id="1" name="Threshold">-10</param>
+                            <param id="2" name="Headroom">14</param>
+                            <param id="3" name="Drive">2</param>
+                            <param id="4" name="Make-up gain">0</param>
+                            <param id="5" name="Mix">50</param>
+                        </action>
+                        <action disabled="1" id="31" name="Add distortion effect" sid="507684736724645" type="Audio">
+                            <param id="0" name="Tag">&quot;vocal&quot;</param>
+                            <param id="1" name="Threshold">-27</param>
+                            <param id="2" name="Headroom">21</param>
+                            <param id="3" name="Drive">5</param>
+                            <param id="4" name="Make-up gain">3</param>
+                            <param id="5" name="Mix">50</param>
                         </action>
                         <action id="-15" name="Set visible" sid="486612696545991" type="textcontrast">
                             <param id="0" name="Visibility">1</param>
@@ -2456,6 +2484,18 @@
                                 <action id="5" name="Set frame" sid="469464888072284" type="finalscore">
                                     <param id="0" name="Frame number">(porcentagem &gt;= 33) + (porcentagem &gt;= 66) + (porcentagem &gt;= 95)</param>
                                 </action>
+                                <action id="0" name="Set text" sid="132912760384920" type="percentageDigits">
+                                    <param id="0" name="Text">porcentagem</param>
+                                </action>
+                                <action id="0" name="Set text" sid="530677379476155" type="mxstreakDigits">
+                                    <param id="0" name="Text">streak</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="922434749566747" type="percentageDigits">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="742192895595495" type="mxstreakDigits">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="471012830129232">
@@ -2518,31 +2558,5 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="370814282511874">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="713831964679641" type="Keyboard">
-                    <param id="0" name="Key">70</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="461973031271687" type="Function">
-                    <param id="0" name="Name">&quot;endgame&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;won&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="300720390205822">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="640710988270076" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="816704531889115" type="tasksboombox">
-                    <param id="0" name="Text">round(notesscored/max(totalnotes,1)*100)</param>
-                </action>
-                <action id="-15" name="Set visible" sid="769271786947949" type="tasksboombox">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

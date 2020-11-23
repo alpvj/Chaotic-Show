@@ -2163,13 +2163,73 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>640</x>
-                        <y>310</y>
+                        <x>636.050048828</x>
+                        <y>273.110290527</y>
                         <z>0</z>
-                        <width>288.655853271</width>
-                        <height>260.937225342</height>
+                        <width>709.047302246</width>
+                        <height>487.482208252</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="percentageDigits" uid="87">
+                    <properties>
+                        <character-width>50</character-width>
+                        <character-height>55</character-height>
+                        <character-set>0123456789</character-set>
+                        <text>100</text>
+                        <scale>1</scale>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>480.294952393</x>
+                        <y>397.608276367</y>
+                        <z>0</z>
+                        <width>164.438949585</width>
+                        <height>65.978591919</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="mxstreakDigits" uid="88">
+                    <properties>
+                        <character-width>50</character-width>
+                        <character-height>55</character-height>
+                        <character-set>0123456789</character-set>
+                        <text>100</text>
+                        <scale>1</scale>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>741.185119629</x>
+                        <y>481.914154053</y>
+                        <z>0</z>
+                        <width>164.438949585</width>
+                        <height>65.978591919</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
